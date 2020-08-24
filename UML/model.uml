@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ZXrzwOYgEeqBG7fM9WzD0g" name="NewModel">
+  <packagedElement xmi:type="uml:Package" xmi:id="_fY3TEOYgEeqBG7fM9WzD0g" name="Model">
+    <packagedElement xmi:type="uml:Class" xmi:id="_imIgUOYgEeqBG7fM9WzD0g" name="entries" visibility="public"/>
+  </packagedElement>
+</uml:Model>
