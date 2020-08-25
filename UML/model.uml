@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ZXrzwOYgEeqBG7fM9WzD0g" name="NewModel">
   <packagedElement xmi:type="uml:Package" xmi:id="_fY3TEOYgEeqBG7fM9WzD0g" name="Model">
-    <packagedElement xmi:type="uml:Class" xmi:id="_imIgUOYgEeqBG7fM9WzD0g" name="entries" visibility="public"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_imIgUOYgEeqBG7fM9WzD0g" name="entry" visibility="public">
+      <generalization xmi:id="_pgGWoObBEeq76M1prjSDjQ" general="_q-UTAOa_Eeq76M1prjSDjQ"/>
+      <ownedAttribute xmi:id="_7iTiYObCEeq76M1prjSDjQ" name="path_lower">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_Oyv4UObDEeq76M1prjSDjQ" name="path_display">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_S2IOMObDEeq76M1prjSDjQ" name="id">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_ZzGAUObDEeq76M1prjSDjQ" name="client_modified">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_6rTMcObDEeq76M1prjSDjQ" name="server_modified">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_-DpBQObDEeq76M1prjSDjQ" name="rev">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_B2AfoObEEeq76M1prjSDjQ" name="size">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_JfFJ0ObEEeq76M1prjSDjQ" name="is_downloadable">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_PN8KEObEEeq76M1prjSDjQ" name="content_hash">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_mC_ogOa_Eeq76M1prjSDjQ" name="Revision" visibility="public">
+      <generalization xmi:id="_o_NQEObBEeq76M1prjSDjQ" general="_q-UTAOa_Eeq76M1prjSDjQ"/>
+      <ownedAttribute xmi:id="_VmckQObEEeq76M1prjSDjQ" name="entries" type="_imIgUOYgEeqBG7fM9WzD0g"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_q-UTAOa_Eeq76M1prjSDjQ" name="Name" visibility="public">
+      <packageImport xmi:id="_AcTpIObBEeq76M1prjSDjQ">
+        <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+      </packageImport>
+      <ownedAttribute xmi:id="_zcs0kOa_Eeq76M1prjSDjQ" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_lWRlEObCEeq76M1prjSDjQ" name="getName"/>
+      <ownedOperation xmi:id="_yI1RkObCEeq76M1prjSDjQ" name="setName"/>
+    </packagedElement>
   </packagedElement>
 </uml:Model>
