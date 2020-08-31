@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ZXrzwOYgEeqBG7fM9WzD0g" name="NewModel">
   <packagedElement xmi:type="uml:Package" xmi:id="_fY3TEOYgEeqBG7fM9WzD0g" name="Model">
-    <packagedElement xmi:type="uml:Class" xmi:id="_imIgUOYgEeqBG7fM9WzD0g" name="entry" visibility="public">
-      <generalization xmi:id="_pgGWoObBEeq76M1prjSDjQ" general="_q-UTAOa_Eeq76M1prjSDjQ"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_imIgUOYgEeqBG7fM9WzD0g" name="Entry" visibility="public">
       <ownedAttribute xmi:id="_7iTiYObCEeq76M1prjSDjQ" name="path_lower">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
@@ -30,6 +29,9 @@
       <ownedAttribute xmi:id="_PN8KEObEEeq76M1prjSDjQ" name="content_hash">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
+      <ownedAttribute xmi:id="_bARJoOkqEequ2ugruIilHQ" name="name">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
       <ownedOperation xmi:id="_ShMWoObcEeq76M1prjSDjQ" name="getPath_lower"/>
       <ownedOperation xmi:id="_X3WjAObcEeq76M1prjSDjQ" name="setPath_lower"/>
       <ownedOperation xmi:id="_ZdhPkObcEeq76M1prjSDjQ" name="getPath_display"/>
@@ -48,9 +50,10 @@
       <ownedOperation xmi:id="_JSsxUObdEeq76M1prjSDjQ" name="setIs_downloadable"/>
       <ownedOperation xmi:id="_K4pbcObdEeq76M1prjSDjQ" name="getContent_Hash"/>
       <ownedOperation xmi:id="_M8HvEObdEeq76M1prjSDjQ" name="setContent_hash"/>
+      <ownedOperation xmi:id="_zw9cEOkqEequ2ugruIilHQ" name="getName"/>
+      <ownedOperation xmi:id="_0HK8oOkqEequ2ugruIilHQ" name="setName"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_mC_ogOa_Eeq76M1prjSDjQ" name="Revision" visibility="public">
-      <generalization xmi:id="_o_NQEObBEeq76M1prjSDjQ" general="_q-UTAOa_Eeq76M1prjSDjQ"/>
       <ownedAttribute xmi:id="_VmckQObEEeq76M1prjSDjQ" name="entries" type="_imIgUOYgEeqBG7fM9WzD0g"/>
       <ownedAttribute xmi:id="_yL2VEObdEeq76M1prjSDjQ" name="is_deleted">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
@@ -60,15 +63,32 @@
       <ownedOperation xmi:id="_3gwkQObdEeq76M1prjSDjQ" name="getIs_deleted"/>
       <ownedOperation xmi:id="_53o8EObdEeq76M1prjSDjQ" name="setIs_deleted"/>
     </packagedElement>
-    <packagedElement xmi:type="uml:Class" xmi:id="_q-UTAOa_Eeq76M1prjSDjQ" name="Name" visibility="public">
-      <packageImport xmi:id="_AcTpIObBEeq76M1prjSDjQ">
-        <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
-      </packageImport>
-      <ownedAttribute xmi:id="_zcs0kOa_Eeq76M1prjSDjQ" name="name">
+    <packagedElement xmi:type="uml:Association" xmi:id="_6AECoOkqEequ2ugruIilHQ" name="A_revisions_entrys" memberEnd="_6AECoekqEequ2ugruIilHQ _6AECpOkqEequ2ugruIilHQ" navigableOwnedEnd="_6AECoekqEequ2ugruIilHQ _6AECpOkqEequ2ugruIilHQ">
+      <ownedEnd xmi:id="_6AECoekqEequ2ugruIilHQ" name="revisions" type="_mC_ogOa_Eeq76M1prjSDjQ" association="_6AECoOkqEequ2ugruIilHQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6AECoukqEequ2ugruIilHQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6AECo-kqEequ2ugruIilHQ" value="*"/>
+      </ownedEnd>
+      <ownedEnd xmi:id="_6AECpOkqEequ2ugruIilHQ" name="entrys" type="_imIgUOYgEeqBG7fM9WzD0g" association="_6AECoOkqEequ2ugruIilHQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_6AECpekqEequ2ugruIilHQ"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_6AECpukqEequ2ugruIilHQ" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_2BQWcOtpEeqgQ-dQIxe5UA" name="Metadati" visibility="public">
+      <ownedAttribute xmi:id="_3xXMsOtqEeqgQ-dQIxe5UA" name="key">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
-      <ownedOperation xmi:id="_lWRlEObCEeq76M1prjSDjQ" name="getName"/>
-      <ownedOperation xmi:id="_yI1RkObCEeq76M1prjSDjQ" name="setName"/>
+      <ownedAttribute xmi:id="_S3iv0OtrEeqgQ-dQIxe5UA" name="value">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedAttribute xmi:id="_V2UOEOtrEeqgQ-dQIxe5UA" name="type">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_azlZUOtrEeqgQ-dQIxe5UA" name="getKey"/>
+      <ownedOperation xmi:id="_bNH6sOtrEeqgQ-dQIxe5UA" name="setKey"/>
+      <ownedOperation xmi:id="_bg1g4OtrEeqgQ-dQIxe5UA" name="getType"/>
+      <ownedOperation xmi:id="_byYj4OtrEeqgQ-dQIxe5UA" name="setType"/>
+      <ownedOperation xmi:id="_cDWYEOtrEeqgQ-dQIxe5UA" name="getValue"/>
+      <ownedOperation xmi:id="_cbo8QOtrEeqgQ-dQIxe5UA" name="setValue"/>
     </packagedElement>
   </packagedElement>
 </uml:Model>
