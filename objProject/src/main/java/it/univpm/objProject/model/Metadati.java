@@ -71,4 +71,5 @@ public class Metadati {
 		this.type = type;
 	}
 	
+	
 }
