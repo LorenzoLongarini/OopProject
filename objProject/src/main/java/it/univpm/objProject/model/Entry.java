@@ -1,5 +1,7 @@
 package it.univpm.objProject.model;
 
+import java.time.LocalDateTime;
+
 public class Entry {
 
 /**
@@ -11,7 +13,7 @@ public class Entry {
 	/**
 	 * Description of the property server_modified.
 	 */
-	public String server_modified;
+	public LocalDateTime server_modified;
 
 	/**
 	 * Description of the property id.
@@ -36,7 +38,7 @@ public class Entry {
 	/**
 	 * Description of the property client_modified.
 	 */
-	public String client_modified;
+	public LocalDateTime client_modified;
 
 	/**
 	 * Description of the property name.
@@ -70,14 +72,14 @@ public class Entry {
 	/**
 	 * @return the server_modified
 	 */
-	public String getServer_modified() {
+	public LocalDateTime getServer_modified() {
 		return server_modified;
 	}
 
 	/**
 	 * @param server_modified the server_modified to set
 	 */
-	public void setServer_modified(String server_modified) {
+	public void setServer_modified(LocalDateTime server_modified) {
 		this.server_modified = server_modified;
 	}
 
@@ -140,14 +142,14 @@ public class Entry {
 	/**
 	 * @return the client_modified
 	 */
-	public String getClient_modified() {
+	public LocalDateTime getClient_modified() {
 		return client_modified;
 	}
 
 	/**
 	 * @param client_modified the client_modified to set
 	 */
-	public void setClient_modified(String client_modified) {
+	public void setClient_modified(LocalDateTime client_modified) {
 		this.client_modified = client_modified;
 	}
 
