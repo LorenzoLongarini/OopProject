@@ -1,6 +1,6 @@
 package it.univpm.objProject.model;
 
-public class Metadati {
+public class Metadata {
 	/**
 	 * Description of the property key.
 	 */
@@ -23,10 +23,11 @@ public class Metadati {
 	/**
 	 * The constructor.
 	 */
-	public Metadati() {
-		// Start of user code constructor for Metadati)
-		super();
-		// End of user code
+	public Metadata(String key, String value, String type) {
+		//constructor for Metadati)
+		this.key = key;
+		this.value = value;
+		this.type = type;
 	}
 
 	/**

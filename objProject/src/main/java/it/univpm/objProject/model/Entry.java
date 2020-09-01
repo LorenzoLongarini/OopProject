@@ -9,60 +9,20 @@ public class Entry {
  * 
  * @author Lorenzo
  */
-
-	/**
-	 * Description of the property server_modified.
-	 */
-	public LocalDateTime server_modified;
-
-	/**
-	 * Description of the property id.
-	 */
-	public String id;
-
-	/**
-	 * Description of the property path_display.
-	 */
-	public String path_display;
-
-	/**
-	 * Description of the property is_downloadable.
-	 */
-	public Boolean is_downloadable;
-
-	/**
-	 * Description of the property content_hash.
-	 */
-	public String content_hash;
-
-	/**
-	 * Description of the property client_modified.
-	 */
-	public LocalDateTime client_modified;
-
 	/**
 	 * Description of the property name.
 	 */
-	public String name;
-
-	/**
-	 * Description of the property path_lower.
-	 */
-	public String path_lower;
-
-	/**
-	 * Description of the property size.
-	 */
-	public long size;
-
-	/**
-	 * Description of the property rev.
-	 */
-	public String rev;
-
-	/**
-	 * The constructor.
-	 */
+	private String name;
+	private LocalDateTime server_modified;
+	private String id;
+	private String path_display;
+	private Boolean is_downloadable;
+	private String content_hash;
+	private LocalDateTime client_modified;
+	private String path_lower;
+	private long size;
+	private String rev;
+	
 	public Entry() {
 		// Start of user code constructor for Entry)
 		super();
