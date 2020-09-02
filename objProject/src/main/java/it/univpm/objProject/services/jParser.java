@@ -29,7 +29,7 @@ public class jParser {
 			
 			for(int j = 0; j < enobj.size(); j++) {
 				
-				ent.setName((String) enobj.get("name"));
+				ent.setName((String) enobj.get("name")); 
 				ent.setPath_lower((String) enobj.get("path_lower"));
 				ent.setPath_display((String) enobj.get("path_display"));
 				ent.setId((String) enobj.get("id"));
