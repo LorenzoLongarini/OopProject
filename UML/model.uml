@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_ZXrzwOYgEeqBG7fM9WzD0g" name="NewModel">
+  <packageImport xmi:id="_8AGHwOz7EeqgQ-dQIxe5UA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
   <packagedElement xmi:type="uml:Package" xmi:id="_fY3TEOYgEeqBG7fM9WzD0g" name="Model">
     <packagedElement xmi:type="uml:Class" xmi:id="_imIgUOYgEeqBG7fM9WzD0g" name="Entry" visibility="public">
       <ownedAttribute xmi:id="_7iTiYObCEeq76M1prjSDjQ" name="path_lower">
@@ -89,6 +92,12 @@
       <ownedOperation xmi:id="_byYj4OtrEeqgQ-dQIxe5UA" name="setType"/>
       <ownedOperation xmi:id="_cDWYEOtrEeqgQ-dQIxe5UA" name="getValue"/>
       <ownedOperation xmi:id="_cbo8QOtrEeqgQ-dQIxe5UA" name="setValue"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_envtsOz7EeqgQ-dQIxe5UA" name="Utility">
+    <packagedElement xmi:type="uml:Class" xmi:id="_jAw8YOz7EeqgQ-dQIxe5UA" name="MetadataArray" visibility="public">
+      <ownedAttribute xmi:id="_yJBU8Oz7EeqgQ-dQIxe5UA" name="metadataArr" type="_2BQWcOtpEeqgQ-dQIxe5UA"/>
+      <ownedOperation xmi:id="_QTcFIOz8EeqgQ-dQIxe5UA" name="metadataCreat"/>
     </packagedElement>
   </packagedElement>
 </uml:Model>
