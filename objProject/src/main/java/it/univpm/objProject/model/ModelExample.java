@@ -1,8 +1,8 @@
 package it.univpm.objProject.model;
 import java.sql.Timestamp;
-import java.util.*;
+//import java.util.*;
 import java.time.LocalDateTime;
-import java.util.Date;
+//import java.util.Date;
 
 
 public class ModelExample {

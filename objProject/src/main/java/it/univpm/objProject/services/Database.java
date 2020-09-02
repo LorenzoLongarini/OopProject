@@ -1,4 +1,5 @@
 package it.univpm.objProject.services;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -16,13 +17,13 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
-
 public class Database {
 
+	public static JSONObject CreateDatabase() {
 
-	
-		String url = "https://api.dropboxapi.com/2/files/list_revisions" ;
-		{
+		String url = "https://api.dropboxapi.com/2/files/list_revisions";
+		JSONObject obj = null;
+
 		try {
 
 			HttpURLConnection openConnection = (HttpURLConnection) new URL(url).openConnection();
@@ -32,13 +33,9 @@ public class Database {
 			openConnection.setRequestProperty("Content-Type", "application/json");
 			openConnection.setRequestProperty("Accept", "application/json");
 			openConnection.setDoOutput(true);
-			
-			String jsonBody = "{\r\n" + 
-					"    \"path\": \"/TxtDoc/testo 1.txt\",\r\n" + 
-					"    \"mode\": \"path\",\r\n" + 
-					"    \"limit\": 10\r\n" + 
-					"}";
-			
+
+			String jsonBody = "{\r\n" + "    \"path\": \"/TxtDoc/testo 1.txt\",\r\n" + "    \"mode\": \"path\",\r\n"
+					+ "    \"limit\": 10\r\n" + "}";
 
 			try (OutputStream os = openConnection.getOutputStream()) {
 				byte[] input = jsonBody.getBytes("utf-8");
@@ -60,11 +57,14 @@ public class Database {
 			} finally {
 				in.close();
 			}
-			JSONObject obj = (JSONObject) JSONValue.parseWithException(data);
-			//System.out.println("OK");
+
+			obj = (JSONObject) JSONValue.parseWithException(data);
+			// System.out.println("OK");
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-}}
+		return obj;
+	}
+}

@@ -1,7 +1,7 @@
 package it.univpm.objProject.model;
 
 import java.util.*;
-import java.time.LocalDateTime;
+//import java.time.LocalDateTime;
 
 public class Revision {
 	
@@ -48,8 +48,8 @@ public class Revision {
 		/**
 		 * @param entries the entries to set
 		 */
-		public void setEntries(ArrayList<Entry> entries) {
-			this.entries = entries;
+		public void setEntries(Entry entriesadd) {
+			entries.add(entriesadd);
 		}
 
 		
