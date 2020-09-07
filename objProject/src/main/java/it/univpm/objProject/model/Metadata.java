@@ -1,19 +1,9 @@
 package it.univpm.objProject.model;
 
 public class Metadata {
-	/**
-	 * Description of the property key.
-	 */
+	
 	public String key;
-
-	/**
-	 * Description of the property value.
-	 */
 	public String value;
-
-	/**
-	 * Description of the property type.
-	 */
 	public String type;
 
 	// Start of user code (user defined attributes for Metadati)

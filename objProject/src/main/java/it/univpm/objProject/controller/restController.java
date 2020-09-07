@@ -1,12 +1,25 @@
 package it.univpm.objProject.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+import it.univpm.objProject.model.*;
+import java.util.ArrayList;
+import it.univpm.objProject.services.RevisionService;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+//import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
 
 public class restController {
 	
-	// @GetMapping("/metadati")
+	@Autowired
+	RevisionService revision_service;
+	
+	
+	@GetMapping("/metadata")
+	public ArrayList<Metadata> metadata(){
+		return revision_service.MetadataVisual();
+	}
 	
 }
