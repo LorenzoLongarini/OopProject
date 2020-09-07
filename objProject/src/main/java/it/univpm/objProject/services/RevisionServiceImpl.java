@@ -19,6 +19,6 @@ public class RevisionServiceImpl implements RevisionService {
 	@Override
 	public ArrayList<Metadata> MetadataVisual(){
 		return ma.metadataArrCreat();
-	};
+	}; 
 	
 }
