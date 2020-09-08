@@ -4,8 +4,9 @@ package it.univpm.objProject.services;
 import java.util.ArrayList;
 
 import it.univpm.objProject.model.Metadata;
-
-
+import it.univpm.objProject.model.Revision;
+//import it.univpm.objProject.services.Database;
+//import it.univpm.objProject.services.jParser;
 import org.springframework.stereotype.Service;
 
 import it.univpm.objProject.util.MetadataArray;
@@ -15,10 +16,25 @@ public class RevisionServiceImpl implements RevisionService {
 
 	
 	private MetadataArray ma = new MetadataArray();
+	private ArrayList<Revision> re;
 	
+	public RevisionServiceImpl() {
+		//jParser re2 = new jParser();
+		//re = re2.jParsing();
+	}
 	@Override
 	public ArrayList<Metadata> MetadataVisual(){
 		return ma.metadataArrCreat();
 	}; 
 	
+	@Override
+	public ArrayList<Revision> RevisionVisual(){
+		jParser re2 = new jParser();
+		try{
+			re = re2.jParsing();
+		}catch(Exception e) {
+			System.out.println("errore"); // errore da inserire nel package exception
+		}
+		return re;
+	};
 }

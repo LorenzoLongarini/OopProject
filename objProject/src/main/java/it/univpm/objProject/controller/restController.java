@@ -16,6 +16,10 @@ public class restController {
 	@Autowired
 	RevisionService revision_service;
 	
+	@GetMapping("/data")
+	public ArrayList<Revision> revision(){
+		return revision_service.RevisionVisual();
+	}
 	
 	@GetMapping("/metadata")
 	public ArrayList<Metadata> metadata(){
