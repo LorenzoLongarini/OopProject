@@ -2,8 +2,8 @@ package it.univpm.objProject.model;
 
 public class Metadata {
 	
-	public String key;
-	public String value;
+	public String alias;
+	public String sourceField;
 	public String type;
 
 	// Start of user code (user defined attributes for Metadati)
@@ -13,39 +13,39 @@ public class Metadata {
 	/**
 	 * The constructor.
 	 */
-	public Metadata(String key, String value, String type) {
+	public Metadata(String alias, String sourceField, String type) {
 		//constructor for Metadati)
-		this.key = key;
-		this.value = value;
+		this.alias = alias;
+		this.sourceField = sourceField;
 		this.type = type;
 	}
 
 	/**
 	 * @return the key
 	 */
-	public String getKey() {
-		return key;
+	public String getAlias() {
+		return alias;
 	}
 
 	/**
 	 * @param key the key to set
 	 */
-	public void setKey(String key) {
-		this.key = key;
+	public void setAlias(String alias) {
+		this.alias = alias;
 	}
 
 	/**
 	 * @return the value
 	 */
-	public String getValue() {
-		return value;
+	public String getSourceField() {
+		return sourceField;
 	}
 
 	/**
 	 * @param value the value to set
 	 */
-	public void setValue(String value) {
-		this.value = value;
+	public void setSourceField(String sourceField) {
+		this.sourceField = sourceField;
 	}
 
 	/**
