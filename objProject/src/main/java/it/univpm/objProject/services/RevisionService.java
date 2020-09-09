@@ -12,5 +12,5 @@ import it.univpm.objProject.model.Revision;
 public interface RevisionService {
 	
 	public ArrayList<Metadata> MetadataVisual();
-	public ArrayList<Revision> RevisionVisual();
+	public Revision RevisionVisual();
 }

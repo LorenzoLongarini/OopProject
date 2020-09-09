@@ -13,8 +13,8 @@ public class Entry {
 	private String path_lower;
 	private String path_display;
 	private String id;
-	private LocalDateTime client_modified;
-	private LocalDateTime server_modified;
+	private String client_modified; // LocalDateTime
+	private String server_modified; // LocalDateTime
 	private String rev;
 	private long size;
 	private Boolean is_downloadable;
@@ -95,7 +95,7 @@ public class Entry {
 	/**
 	 * @return the client_modified
 	 */
-	public LocalDateTime getClient_modified() {
+	public String getClient_modified() {
 		return client_modified;
 	}
 
@@ -103,7 +103,7 @@ public class Entry {
 	/**
 	 * @param client_modified the client_modified to set
 	 */
-	public void setClient_modified(LocalDateTime client_modified) {
+	public void setClient_modified(String client_modified) {
 		this.client_modified = client_modified;
 	}
 
@@ -111,7 +111,7 @@ public class Entry {
 	/**
 	 * @return the server_modified
 	 */
-	public LocalDateTime getServer_modified() {
+	public String getServer_modified() {
 		return server_modified;
 	}
 
@@ -119,7 +119,7 @@ public class Entry {
 	/**
 	 * @param server_modified the server_modified to set
 	 */
-	public void setServer_modified(LocalDateTime server_modified) {
+	public void setServer_modified(String server_modified) {
 		this.server_modified = server_modified;
 	}
 

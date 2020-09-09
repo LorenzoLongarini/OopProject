@@ -5,14 +5,8 @@ import java.util.*;
 
 public class Revision {
 	
-		/**
-		 * Description of the property is_deleted.
-		 */
-		public Boolean is_deleted;
-
-		/**
-		 * Description of the property entries.
-		 */
+		
+		public boolean is_deleted;
 		public ArrayList<Entry> entries = new ArrayList<Entry>();
 
 		/**
@@ -27,14 +21,14 @@ public class Revision {
 		/**
 		 * @return the is_deleted
 		 */
-		public Boolean getIs_deleted() {
+		public boolean getIs_deleted() {
 			return is_deleted;
 		}
 
 		/**
 		 * @param is_deleted the is_deleted to set
 		 */
-		public void setIs_deleted(Boolean is_deleted) {
+		public void setIs_deleted(boolean is_deleted) {
 			this.is_deleted = is_deleted;
 		}
 

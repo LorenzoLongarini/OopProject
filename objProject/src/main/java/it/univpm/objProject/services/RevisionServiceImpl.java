@@ -1,6 +1,5 @@
 package it.univpm.objProject.services;
 
-
 import java.util.ArrayList;
 
 import it.univpm.objProject.model.Metadata;
@@ -14,27 +13,40 @@ import it.univpm.objProject.util.MetadataArray;
 @Service
 public class RevisionServiceImpl implements RevisionService {
 
-	
-	private MetadataArray ma = new MetadataArray();
-	private ArrayList<Revision> re;
-	
-	public RevisionServiceImpl() {
-		//jParser re2 = new jParser();
-		//re = re2.jParsing();
-	}
-	@Override
-	public ArrayList<Metadata> MetadataVisual(){
-		return ma.metadataArrCreat();
-	}; 
-	
-	@Override
-	public ArrayList<Revision> RevisionVisual(){
+	//private MetadataArray ma = new MetadataArray();
+	//private Revision re;
+
+	/*public RevisionServiceImpl() {
 		jParser re2 = new jParser();
-		try{
-			re = re2.jParsing();
-		}catch(Exception e) {
-			System.out.println("errore"); // errore da inserire nel package exception
-		}
+		re = re2.jParsing();
+		//ma = new MetadataArray();
+	}*/
+
+	@Override
+	public Revision RevisionVisual() {
+		Revision re;
+		jParser re2 = new jParser();
+		//re2 = re2.jParsing();
+		//re = re2.jParsing();
+		// return re2.jParsing();
+		
+		  //try{
+			  
+			  re = re2.jParsing(); 
+			  
+			// }catch(Exception e) 
+		 // {
+		//		  System.out.println("errore");
+		  //}
+		  //errore da inserire nel package exception }
+		 
 		return re;
 	};
+
+	@Override
+	public ArrayList<Metadata> MetadataVisual() {
+		MetadataArray ma = new MetadataArray();
+		return ma.metadataArrCreat();
+	}
+
 }

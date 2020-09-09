@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RestController;
 import it.univpm.objProject.model.*;
 import java.util.ArrayList;
 import it.univpm.objProject.services.RevisionService;
+import it.univpm.objProject.services.RevisionServiceImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,10 +15,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class restController {
 	
 	@Autowired
-	RevisionService revision_service;
+	RevisionServiceImpl revision_service;
 	
 	@GetMapping("/data")
-	public ArrayList<Revision> revision(){
+	public Revision revision(){
 		return revision_service.RevisionVisual();
 	}
 	
