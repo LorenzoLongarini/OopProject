@@ -2,6 +2,8 @@ package it.univpm.objProject.services;
 
 import it.univpm.objProject.model.*;
 
+import java.util.ArrayList;
+
 //import java.time.LocalDateTime;
 //import java.time.format.DateTimeFormatter;
 
@@ -13,15 +15,19 @@ import org.json.simple.JSONObject;
 
 public class jParser {
 
-	public Revision jParsing() {
+	public ArrayList<Revision> jParsing() {
 
-		Revision revisions = new Revision();
-		JSONObject jobj = Database.CreateDatabase();
-
-		revisions.setIs_deleted((boolean) jobj.get("is_deleted"));
+		ArrayList<Revision> revisions = new ArrayList<Revision>();
+		JSONArray jarray = Database.CreateDatabase();
+		
+		for(int i = 0; i < jarray.size(); i++) {
+			
+		Revision rv = new Revision();
+		JSONObject jobj1 = (JSONObject) jarray.get(i);
+		rv.setIs_deleted((boolean) jobj1.get("is_deleted"));
 
 		Entry ent = new Entry();
-		JSONArray enobj = (JSONArray) jobj.get("entries");
+		JSONArray enobj = (JSONArray) jobj1.get("entries");
 
 		for (int j = 0; j < enobj.size(); j++) {
 			JSONObject jobj2 = (JSONObject) enobj.get(j);
@@ -35,10 +41,11 @@ public class jParser {
 			ent.setSize((long) jobj2.get("size"));
 			ent.setIs_downloadable((Boolean) jobj2.get("is_downloadable"));
 			ent.setContent_hash((String) jobj2.get("content_hash"));
-			revisions.setEntries(ent);
+			rv.setEntries(ent);
 		}
 
+		revisions.add(rv);
+		}
 		return revisions;
-
 	}
 }

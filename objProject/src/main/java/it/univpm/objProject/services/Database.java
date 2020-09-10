@@ -12,18 +12,28 @@ import java.net.URL;
 //import java.nio.file.Files;
 //import java.nio.file.Paths;
 
-import org.json.JSONArray;
-//import org.json.simple.JSONArray;
+//import org.json.JSONArray;
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
 
 public class Database {
 
-	public static JSONObject CreateDatabase() {
-
+	public static JSONArray CreateDatabase() {
+		
+		String[] file_names = new String[5];
+		file_names[0] = "testo 1.txt";
+		file_names[1] = "testo 2.txt";
+		file_names[2] = "testo 3.txt";
+		file_names[3] = "testo 4.txt";
+		file_names[4] = "testo 5.txt";
 		String url = "https://api.dropboxapi.com/2/files/list_revisions";
-		JSONObject obj = null;
+		JSONArray jarray = new JSONArray();
+		
+		for(int i = 0; i < (file_names.length - 1) ; i++) {
+			
+		JSONObject jobj = new JSONObject();
 
 		try {
 
@@ -35,7 +45,7 @@ public class Database {
 			openConnection.setRequestProperty("Accept", "application/json");
 			openConnection.setDoOutput(true);
 
-			String jsonBody = "{\r\n" + "    \"path\": \"/TxtDoc/testo 1.txt\",\r\n" + "    \"mode\": \"path\",\r\n"
+			String jsonBody = "{\r\n" + "    \"path\": \"/TxtDoc/" + file_names[i] + "\",\r\n" + "    \"mode\": \"path\",\r\n"
 					+ "    \"limit\": 10\r\n" + "}";
 
 			try (OutputStream os = openConnection.getOutputStream()) {
@@ -59,13 +69,16 @@ public class Database {
 				in.close();
 			}
 
-			obj = (JSONObject) JSONValue.parseWithException(data);
-			// System.out.println("OK");
+			jobj = (JSONObject) JSONValue.parseWithException(data);
+			 //System.out.println("OK");
 		} catch (IOException | ParseException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return obj;
+		jarray.add(i, jobj);
+		}
+		return jarray;
 	}
 }
+

@@ -23,25 +23,13 @@ public class RevisionServiceImpl implements RevisionService {
 	}*/
 
 	@Override
-	public Revision RevisionVisual() {
-		Revision re;
-		jParser re2 = new jParser();
-		//re2 = re2.jParsing();
-		//re = re2.jParsing();
-		// return re2.jParsing();
+	public ArrayList<Revision> RevisionVisual() {
 		
-		  //try{
-			  
-			  re = re2.jParsing(); 
-			  
-			// }catch(Exception e) 
-		 // {
-		//		  System.out.println("errore");
-		  //}
-		  //errore da inserire nel package exception }
-		 
+		jParser re2 = new jParser();
+		ArrayList<Revision> re = re2.jParsing(); 
 		return re;
-	};
+		
+	}
 
 	@Override
 	public ArrayList<Metadata> MetadataVisual() {
