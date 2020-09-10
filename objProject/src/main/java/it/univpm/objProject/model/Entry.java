@@ -1,6 +1,9 @@
 package it.univpm.objProject.model;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 public class Entry {
 
@@ -13,8 +16,8 @@ public class Entry {
 	private String path_lower;
 	private String path_display;
 	private String id;
-	private String client_modified; // LocalDateTime
-	private String server_modified; // LocalDateTime
+	private Date client_modified; // LocalDateTime
+	private Date server_modified; // LocalDateTime
 	private String rev;
 	private long size;
 	private Boolean is_downloadable;
@@ -95,7 +98,7 @@ public class Entry {
 	/**
 	 * @return the client_modified
 	 */
-	public String getClient_modified() {
+	public Date getClient_modified() {
 		return client_modified;
 	}
 
@@ -104,14 +107,17 @@ public class Entry {
 	 * @param client_modified the client_modified to set
 	 */
 	public void setClient_modified(String client_modified) {
-		this.client_modified = client_modified;
+		Instant C_instant = Instant.parse(client_modified);
+		this.client_modified = Date.from(C_instant);
+				//Date.DateFormat.SimpleDateFormat(client_modified, DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
+		
 	}
 
 
 	/**
 	 * @return the server_modified
 	 */
-	public String getServer_modified() {
+	public Date getServer_modified() {
 		return server_modified;
 	}
 
@@ -120,7 +126,8 @@ public class Entry {
 	 * @param server_modified the server_modified to set
 	 */
 	public void setServer_modified(String server_modified) {
-		this.server_modified = server_modified;
+		Instant S_instant = Instant.parse(server_modified);
+		this.server_modified = Date.from(S_instant);
 	}
 
 
