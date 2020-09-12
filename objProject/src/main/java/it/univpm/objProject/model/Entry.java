@@ -6,8 +6,9 @@ import java.time.Instant;
 import java.util.Date;
 //import java.util.GregorianCalendar;
 
-public class Entry {
 
+//public class Entry implements Comparable<Entry> { implementazione per il metodo di comparazione
+public class Entry {
 /**
  * Description of Entry.
  * 
@@ -30,8 +31,12 @@ public class Entry {
 		super();
 		// End of user code
 	}
-
-
+//metodo di comparazione dell'entry
+	/*public int compareTo(Entry other){
+		   if((this.server_modified.compareTo(other.getServer_modified()) != 0))
+		{return this.server_modified.compareTo(other.server_modified);}
+		   return (this.content_hash.compareTo(other.getContent_hash()));//id degli oggetti comparati
+		}*/
 	/**
 	 * @return the name
 	 */

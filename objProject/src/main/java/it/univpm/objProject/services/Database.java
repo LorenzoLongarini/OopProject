@@ -31,7 +31,7 @@ public class Database {
 		String url = "https://api.dropboxapi.com/2/files/list_revisions";
 		JSONArray jarray = new JSONArray();
 		
-		for(int i = 0; i < (file_names.length - 1) ; i++) {
+		for(int i = 0; i < (file_names.length) ; i++) {
 			
 		JSONObject jobj = new JSONObject();
 
