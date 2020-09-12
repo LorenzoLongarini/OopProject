@@ -44,9 +44,11 @@ public class Database {
 			openConnection.setRequestProperty("Content-Type", "application/json");
 			openConnection.setRequestProperty("Accept", "application/json");
 			openConnection.setDoOutput(true);
-
-			String jsonBody = "{\r\n" + "    \"path\": \"/TxtDoc/" + file_names[i] + "\",\r\n" + "    \"mode\": \"path\",\r\n"
-					+ "    \"limit\": 10\r\n" + "}";
+			
+		
+			String jsonBody = "{\r\n" + "    \"path\": \"/TxtDoc/" + file_names[i] + "\",\r\n" +
+							  "    \"mode\": \"path\",\r\n"+
+							  "    \"limit\": 100\r\n" + "}";
 
 			try (OutputStream os = openConnection.getOutputStream()) {
 				byte[] input = jsonBody.getBytes("utf-8");

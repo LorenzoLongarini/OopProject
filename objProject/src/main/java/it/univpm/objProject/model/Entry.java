@@ -6,9 +6,10 @@ import java.time.Instant;
 import java.util.Date;
 //import java.util.GregorianCalendar;
 
+//implements Comparable<Entry>
 
-//public class Entry implements Comparable<Entry> { implementazione per il metodo di comparazione
-public class Entry {
+public class Entry { //implementazione per il metodo di comparazione
+//public class Entry {
 /**
  * Description of Entry.
  * 
