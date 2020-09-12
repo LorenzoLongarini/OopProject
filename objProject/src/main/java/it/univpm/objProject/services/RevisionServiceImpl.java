@@ -25,8 +25,8 @@ public class RevisionServiceImpl implements RevisionService {
 	@Override
 	public ArrayList<Revision> RevisionVisual() {
 		
-		jParser re2 = new jParser();
-		ArrayList<Revision> re = re2.jParsing(); 
+		Database re2 = new Database();
+		ArrayList<Revision> re = re2.CreateDatabase(); 
 		return re;
 		
 	}
