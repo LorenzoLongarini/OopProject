@@ -19,8 +19,8 @@ public class Entry { //implementazione per il metodo di comparazione
 	private String path_lower;
 	private String path_display;
 	private String id;
-	private Date client_modified; // LocalDateTime
-	private Date server_modified; // LocalDateTime
+	private Instant client_modified; // LocalDateTime
+	private Instant server_modified; // LocalDateTime
 	private String rev;
 	private long size;
 	private Boolean is_downloadable;
@@ -105,7 +105,7 @@ public class Entry { //implementazione per il metodo di comparazione
 	/**
 	 * @return the client_modified
 	 */
-	public Date getClient_modified() {
+	public Instant getClient_modified() {
 		return client_modified;
 	}
 
@@ -115,7 +115,7 @@ public class Entry { //implementazione per il metodo di comparazione
 	 */
 	public void setClient_modified(String client_modified) {
 		Instant C_instant = Instant.parse(client_modified);
-		this.client_modified = Date.from(C_instant);
+		this.client_modified = Instant.from(C_instant);
 				//Date.DateFormat.SimpleDateFormat(client_modified, DateTimeFormatter.ofPattern("yyyy-MM-dd_HH-mm-ss"));
 		
 	}
@@ -124,7 +124,7 @@ public class Entry { //implementazione per il metodo di comparazione
 	/**
 	 * @return the server_modified
 	 */
-	public Date getServer_modified() {
+	public Instant getServer_modified() {
 		return server_modified;
 	}
 
@@ -134,7 +134,7 @@ public class Entry { //implementazione per il metodo di comparazione
 	 */
 	public void setServer_modified(String server_modified) {
 		Instant S_instant = Instant.parse(server_modified);
-		this.server_modified = Date.from(S_instant);
+		this.server_modified = Instant.from(S_instant);
 	}
 
 
