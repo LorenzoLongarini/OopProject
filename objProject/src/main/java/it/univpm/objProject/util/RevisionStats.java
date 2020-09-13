@@ -6,7 +6,6 @@ import java.util.ArrayList;
 import org.json.simple.JSONObject;
 
 import it.univpm.objProject.model.Entry;
-import it.univpm.objProject.model.FilteredRev;
 import it.univpm.objProject.model.Revision;
 import it.univpm.objProject.model.Stats;
 import it.univpm.objProject.services.Database;
