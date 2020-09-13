@@ -40,7 +40,7 @@ public class RevisionStats {
 				}
 			}
 		}
-		
+		 
 		return st;
 		
 	}
