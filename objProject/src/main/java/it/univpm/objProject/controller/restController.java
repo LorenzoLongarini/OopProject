@@ -33,8 +33,8 @@ public class restController {
 	}
 	
 	@PostMapping("/stats")
-	public Stats stats(@RequestBody Map data){
-		JSONObject jobj = new JSONObject(data);
+	public Stats stats(@RequestBody Map info){
+		JSONObject jobj = new JSONObject(info);
 		return revision_service.StatsVisual(jobj);
 	}
 	
