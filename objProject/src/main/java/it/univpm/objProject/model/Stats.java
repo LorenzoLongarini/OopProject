@@ -11,6 +11,7 @@ public class Stats {
 	private long av_time_per_week;
 	
 	public Stats() {
+		super();
 		this.name = null;
 		this.rev_per_day = 0;
 		this.rev_per_week = 0;

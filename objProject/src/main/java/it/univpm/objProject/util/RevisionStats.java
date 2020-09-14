@@ -18,50 +18,72 @@ public class RevisionStats {
 		en1.setServer_modified((String) jobj.get("key"));
 		en1.setName((String) jobj.get("name"));
 
-		Stats st = new Stats();
-
 		Database re2 = new Database();
 		ArrayList<Revision> re = re2.CreateDatabase();
-		ArrayList<Stats> entstat = new ArrayList<Stats>();
-		//ArrayList<Stats> entstatw = new ArrayList<Stats>();
+		ArrayList<Entry> ent_arr = new ArrayList<Entry>();
+		
+		
+		Stats st = new Stats();
+		ArrayList<Stats> stat_arr1 = new ArrayList<Stats>();
+		ArrayList<Stats> stat_arr2 = new ArrayList<Stats>();
 		
 		long convert_seconds = en1.getServer_modified().getEpochSecond(); // modifica da public a private
-		long convert_seconds_d = convert_seconds - 86400;
-		long convert_seconds_w = convert_seconds - 604800;
+		long p_day = convert_seconds - 86400;
+		long p_week = convert_seconds - 604800;
 		long tot_sec_d = 0;
 		long tot_sec_w = 0;
 
 		for (int i = 0; i < re.size(); i++) {
-			ArrayList<Entry> ent = re.get(i).getEntries();
-			for (int j = 0; j < ent.size(); j++) {
-				Entry en = ent.get(j);
-				Stats stat = new Stats();
-
-				if (en.getName().compareTo(en1.getName()) == 0) {
+			ent_arr = re.get(i).getEntries();
+			for (int j = 0; j < ent_arr.size(); j++) {
+				if (ent_arr.get(j).getName().compareTo(en1.getName()) == 0) {
 					st.setName(en1.getName());
-					long modify_sec = en.getServer_modified().getEpochSecond();
-					if (modify_sec >= convert_seconds_d && modify_sec <= convert_seconds) {
+					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_day && ent_arr.get(j).getServer_modified().getEpochSecond() <= convert_seconds) {
+						
 						st.setRev_per_day(1);
-						stat.setAv_time_per_day(modify_sec);
-						entstat.add(stat);
-						//tot_sec_d = st.add_Sec(modify_sec);
+						Stats stat1 = new Stats();
+						stat1.setAv_time_per_day(ent_arr.get(j).getServer_modified().getEpochSecond());
+						stat_arr1.add(stat1);
 					}
-					if (modify_sec >= convert_seconds_w && modify_sec <= convert_seconds) {
+					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_week && ent_arr.get(j).getServer_modified().getEpochSecond() <= convert_seconds) {
+						
 						st.setRev_per_week(1);
-						stat.setAv_time_per_week(modify_sec);
-						entstat.add(stat);
-						//tot_sec_w = st.add_Sec(modify_sec);
+						Stats stat2 = new Stats();
+						stat2.setAv_time_per_week(ent_arr.get(j).getServer_modified().getEpochSecond());
+						stat_arr2.add(stat2);
 					}
-				}
+			    }
 			}
 		}
-		for(int k = 0; k < entstat.size() - 1 ; k++) {
-			tot_sec_d += entstat.get(k).getAv_time_per_day() - entstat.get(k+1).getAv_time_per_day();
-			tot_sec_w += entstat.get(k).getAv_time_per_week() - entstat.get(k+1).getAv_time_per_week();
+		try {
+		for (int k = 0; k <= (stat_arr1.size() - 2) ; k++) {
+			//if(stat_arr1.get(k).getAv_time_per_day() != 0 && stat_arr1.get(k+1).getAv_time_per_day() != 0) {
+				tot_sec_d += (stat_arr1.get(k).getAv_time_per_day() - stat_arr1.get(k+1).getAv_time_per_day());
+				System.out.println(stat_arr1.get(k).getAv_time_per_day());
+			
+		}}catch(Exception e) {
+			System.out.println("Numero revisioni troppo basso");
 		}
 		
-		st.setAv_time_per_day((tot_sec_d)/st.getRev_per_day());
-		st.setAv_time_per_week((tot_sec_w)/st.getRev_per_week());
+		
+		for (int k = 0; k <= stat_arr2.size() - 2 ; k++) {
+			//if(stat_arr2.get(k).getAv_time_per_week() != 0 && stat_arr1.get(k+1).getAv_time_per_day() != 0) {
+			tot_sec_w += (stat_arr2.get(k).getAv_time_per_week() - stat_arr2.get(k+1).getAv_time_per_week());
+			//System.out.println(tot_sec_w);
+			//}
+		}
+		for(int k = 0; k < stat_arr1.size(); k++) {
+			//System.out.println(stat_arr1.get(k).getAv_time_per_day());
+		}
+		for(int k = 0; k < stat_arr2.size(); k++) {
+			//System.out.println(stat_arr2.get(k).getAv_time_per_week());
+		}
+		
+		//System.out.println(tot_sec_d);
+		//System.out.println(tot_sec_w);
+		
+		st.setAv_time_per_day((tot_sec_d)/(st.getRev_per_day()));
+		st.setAv_time_per_week((tot_sec_w)/(st.getRev_per_week()));
 
 		return st;
 
