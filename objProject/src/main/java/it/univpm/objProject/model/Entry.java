@@ -20,7 +20,7 @@ public class Entry { //implementazione per il metodo di comparazione
 	private String path_display;
 	private String id;
 	private Instant client_modified; // LocalDateTime
-	public Instant server_modified; // LocalDateTime
+	private Instant server_modified; // LocalDateTime
 	private String rev;
 	private long size;
 	private Boolean is_downloadable;

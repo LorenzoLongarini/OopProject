@@ -66,7 +66,7 @@ public class Stats {
 	 * @param av_time_per_day the av_time_per_day to set
 	 */
 	public void setAv_time_per_day(long av_time_per_day) {
-		this.av_time_per_day += av_time_per_day;
+		this.av_time_per_day = av_time_per_day;
 	}
 	/**
 	 * @return the av_time_per_week
@@ -78,7 +78,13 @@ public class Stats {
 	 * @param av_time_per_week the av_time_per_week to set
 	 */
 	public void setAv_time_per_week(long av_time_per_week) {
-		this.av_time_per_week += av_time_per_week;
+		this.av_time_per_week = av_time_per_week;
+	}
+	
+	public long add_Sec(long sec) {
+		long seconds = 0;
+		seconds += sec;
+		return seconds;
 	}
 
 }
