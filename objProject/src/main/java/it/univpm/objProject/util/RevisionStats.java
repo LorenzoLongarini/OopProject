@@ -40,17 +40,17 @@ public class RevisionStats {
 					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_day
 							&& ent_arr.get(j).getServer_modified().getEpochSecond() <= convert_seconds) {
 
-						st.setRev_per_day(1);
+						st.setRev_prev_day(1);
 						stat_appoggio = new Stats();
-						stat_appoggio.setAv_time_per_day(ent_arr.get(j).getServer_modified().getEpochSecond());
+						stat_appoggio.setAv_time_prev_day(ent_arr.get(j).getServer_modified().getEpochSecond());
 						stat_arr1.add(stat_appoggio);
 					}
 					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_week
 							&& ent_arr.get(j).getServer_modified().getEpochSecond() <= convert_seconds) {
 
-						st.setRev_per_week(1);
+						st.setRev_prev_week(1);
 						stat_appoggio = new Stats();
-						stat_appoggio.setAv_time_per_week(ent_arr.get(j).getServer_modified().getEpochSecond());
+						stat_appoggio.setAv_time_prev_week(ent_arr.get(j).getServer_modified().getEpochSecond());
 						stat_arr2.add(stat_appoggio);
 					}
 				}
@@ -59,8 +59,8 @@ public class RevisionStats {
 		try {
 			for (int k = 0; k <= (stat_arr1.size() - 2); k++) {
 
-				tot_sec_d += (stat_arr1.get(k).getAv_time_per_day() - stat_arr1.get(k + 1).getAv_time_per_day());
-				System.out.println(stat_arr1.get(k).getAv_time_per_day());
+				tot_sec_d += (stat_arr1.get(k).getAv_time_prev_day() - stat_arr1.get(k + 1).getAv_time_prev_day());
+				System.out.println(stat_arr1.get(k).getAv_time_prev_day());
 
 			}
 		} catch (Exception e) {
@@ -69,7 +69,7 @@ public class RevisionStats {
 
 		for (int k = 0; k <= stat_arr2.size() - 2; k++) {
 
-			tot_sec_w += (stat_arr2.get(k).getAv_time_per_week() - stat_arr2.get(k + 1).getAv_time_per_week());
+			tot_sec_w += (stat_arr2.get(k).getAv_time_prev_week() - stat_arr2.get(k + 1).getAv_time_prev_week());
 
 		}
 		for (int k = 0; k < stat_arr1.size(); k++) {
@@ -80,13 +80,13 @@ public class RevisionStats {
 		}
 
 		try {
-			st.setAv_time_per_day((tot_sec_d) / (st.getRev_per_day()));
+			st.setAv_time_prev_day((tot_sec_d) / (st.getRev_prev_day()));
 		} catch (Exception e) {
 
 		}
 
 		try {
-			st.setAv_time_per_week((tot_sec_w) / (st.getRev_per_week()));
+			st.setAv_time_prev_week((tot_sec_w) / (st.getRev_prev_week()));
 		} catch (Exception e) {
 
 		}

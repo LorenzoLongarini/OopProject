@@ -92,7 +92,7 @@ public class Entry {
 	 */
 	public void setClient_modified(String client_modified) {
 		Instant C_instant = Instant.parse(client_modified);
-		this.client_modified = Instant.from(C_instant);
+		this.client_modified = C_instant;
 
 	}
 
@@ -108,7 +108,7 @@ public class Entry {
 	 */
 	public void setServer_modified(String server_modified) {
 		Instant S_instant = Instant.parse(server_modified);
-		this.server_modified = Instant.from(S_instant);
+		this.server_modified = S_instant;
 	}
 
 	/**

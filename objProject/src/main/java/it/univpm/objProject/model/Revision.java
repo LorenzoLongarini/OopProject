@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Revision {
 
-	public boolean is_deleted;
+	private boolean is_deleted;
 	public ArrayList<Entry> entries = new ArrayList<Entry>();
 
 	/**

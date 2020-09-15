@@ -2,9 +2,9 @@ package it.univpm.objProject.model;
 
 public class Metadata {
 
-	public String alias;
-	public String sourceField;
-	public String type;
+	private String alias;
+	private String sourceField;
+	private String type;
 
 	/**
 	 * The constructor.

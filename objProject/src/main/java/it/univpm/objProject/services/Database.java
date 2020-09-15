@@ -33,7 +33,7 @@ public class Database {
 		file_names[3] = "testo 4.txt";
 		file_names[4] = "testo 5.txt";
 		String url = "https://api.dropboxapi.com/2/files/list_revisions";
-		// JSONArray jarray = new JSONArray();
+		
 		ArrayList<Revision> revisions = new ArrayList<Revision>();
 
 		for (int i = 0; i < (file_names.length); i++) {
