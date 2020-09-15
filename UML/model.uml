@@ -129,5 +129,37 @@
       <ownedAttribute xmi:id="_yJBU8Oz7EeqgQ-dQIxe5UA" name="metadataArr" type="_2BQWcOtpEeqgQ-dQIxe5UA"/>
       <ownedOperation xmi:id="_QTcFIOz8EeqgQ-dQIxe5UA" name="metadataCreat"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_90w0APdnEeq1tZVZ8Q83sg" name="RevisionStats" visibility="public">
+      <ownedOperation xmi:id="_BpPyQPdoEeq1tZVZ8Q83sg" name="create_stats"/>
+    </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_o5SqMPdoEeq1tZVZ8Q83sg" name="Controller">
+    <packagedElement xmi:type="uml:Class" xmi:id="_q97bcPdoEeq1tZVZ8Q83sg" name="restController" visibility="public">
+      <ownedAttribute xmi:id="_4mBo0PdoEeq1tZVZ8Q83sg" name="revision_service" type="_V2X9cPdpEeq1tZVZ8Q83sg"/>
+      <ownedOperation xmi:id="_BcdMEPdrEeq1tZVZ8Q83sg" name="get_revision"/>
+      <ownedOperation xmi:id="_BgU_cPdrEeq1tZVZ8Q83sg" name="get_metadata"/>
+      <ownedOperation xmi:id="_BlNfcPdrEeq1tZVZ8Q83sg" name="post_stats"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_A6VBUPdpEeq1tZVZ8Q83sg" name="Services">
+    <packagedElement xmi:type="uml:Class" xmi:id="_LjxFMPdpEeq1tZVZ8Q83sg" name="Database" visibility="public">
+      <ownedOperation xmi:id="_Nh6z8PdpEeq1tZVZ8Q83sg" name="CreateDatabase"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_TGBVsPdpEeq1tZVZ8Q83sg" name="RevisionService" visibility="public">
+      <ownedOperation xmi:id="_8JO0YPdpEeq1tZVZ8Q83sg" name="MetadataVisual"/>
+      <ownedOperation xmi:id="_8RxsYPdpEeq1tZVZ8Q83sg" name="RevisionVisual"/>
+      <ownedOperation xmi:id="_8Y3y4PdpEeq1tZVZ8Q83sg" name="StatsVisual"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_V2X9cPdpEeq1tZVZ8Q83sg" name="RevisionServiceImpl" visibility="public">
+      <ownedOperation xmi:id="_VZdigPdqEeq1tZVZ8Q83sg" name="RevisionVisual"/>
+      <ownedOperation xmi:id="_VeInIPdqEeq1tZVZ8Q83sg" name="MetadataVisual"/>
+      <ownedOperation xmi:id="_VizrwPdqEeq1tZVZ8Q83sg" name="StatsVisual"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Interface" xmi:id="_QXvVEPdqEeq1tZVZ8Q83sg" name="RevisionService" visibility="public">
+      <ownedOperation xmi:id="_UfGMAPdqEeq1tZVZ8Q83sg" name="RevisionVisual"/>
+      <ownedOperation xmi:id="_UpCLIPdqEeq1tZVZ8Q83sg" name="MetadataVisual"/>
+      <ownedOperation xmi:id="_UwI4sPdqEeq1tZVZ8Q83sg" name="StatsVisual"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HJtUsPdpEeq1tZVZ8Q83sg" name="Exception"/>
 </uml:Model>

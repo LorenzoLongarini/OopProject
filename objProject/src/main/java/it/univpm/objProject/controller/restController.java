@@ -21,17 +21,17 @@ public class restController {
 	RevisionServiceImpl revision_service;
 
 	@GetMapping(value = "/data")
-	public ArrayList<Revision> revision() {
+	public ArrayList<Revision> get_revision() {
 		return revision_service.RevisionVisual();
 	}
 
 	@GetMapping(value = "/metadata")
-	public ArrayList<Metadata> metadata() {
+	public ArrayList<Metadata> get_metadata() {
 		return revision_service.MetadataVisual();
 	}
 
 	@PostMapping(value = "/stats")
-	public Stats stats(@RequestBody Map info) {
+	public Stats post_stats(@RequestBody Map info) {
 		JSONObject jobj = new JSONObject(info);
 		return revision_service.StatsVisual(jobj);
 	}
