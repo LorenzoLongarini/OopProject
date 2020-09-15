@@ -124,7 +124,7 @@
       <ownedOperation xmi:id="_wBqQUPdCEeq1tZVZ8Q83sg" name="setAv_time_prev_week"/>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_envtsOz7EeqgQ-dQIxe5UA" name="Utility">
+  <packagedElement xmi:type="uml:Package" xmi:id="_envtsOz7EeqgQ-dQIxe5UA" name="Util">
     <packagedElement xmi:type="uml:Class" xmi:id="_jAw8YOz7EeqgQ-dQIxe5UA" name="MetadataArray" visibility="public">
       <ownedAttribute xmi:id="_yJBU8Oz7EeqgQ-dQIxe5UA" name="metadataArr" type="_2BQWcOtpEeqgQ-dQIxe5UA"/>
       <ownedOperation xmi:id="_QTcFIOz8EeqgQ-dQIxe5UA" name="metadataCreat"/>
@@ -151,6 +151,7 @@
       <ownedOperation xmi:id="_8Y3y4PdpEeq1tZVZ8Q83sg" name="StatsVisual"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_V2X9cPdpEeq1tZVZ8Q83sg" name="RevisionServiceImpl" visibility="public">
+      <interfaceRealization xmi:id="_DhMA8PeMEeq1tZVZ8Q83sg" client="_V2X9cPdpEeq1tZVZ8Q83sg" supplier="_QXvVEPdqEeq1tZVZ8Q83sg" contract="_QXvVEPdqEeq1tZVZ8Q83sg"/>
       <ownedOperation xmi:id="_VZdigPdqEeq1tZVZ8Q83sg" name="RevisionVisual"/>
       <ownedOperation xmi:id="_VeInIPdqEeq1tZVZ8Q83sg" name="MetadataVisual"/>
       <ownedOperation xmi:id="_VizrwPdqEeq1tZVZ8Q83sg" name="StatsVisual"/>
@@ -162,4 +163,34 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_HJtUsPdpEeq1tZVZ8Q83sg" name="Exception"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_Oo8YgPeMEeq1tZVZ8Q83sg" name="User">
+    <eAnnotations xmi:id="_Oo8YgfeMEeq1tZVZ8Q83sg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <details xmi:id="_Oo8YgveMEeq1tZVZ8Q83sg" key="Human"/>
+    </eAnnotations>
+  </packagedElement>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_RHxLYPeMEeq1tZVZ8Q83sg" name="Get /data"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_RcHDsPeMEeq1tZVZ8Q83sg" name="Get /metadata"/>
+  <packagedElement xmi:type="uml:UseCase" xmi:id="_Rykb4PeMEeq1tZVZ8Q83sg" name="Get /stats"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Vh1i8PeMEeq1tZVZ8Q83sg" memberEnd="_Vh2KAPeMEeq1tZVZ8Q83sg _Vh2KAfeMEeq1tZVZ8Q83sg">
+    <ownedEnd xmi:id="_Vh2KAPeMEeq1tZVZ8Q83sg" type="_Oo8YgPeMEeq1tZVZ8Q83sg" association="_Vh1i8PeMEeq1tZVZ8Q83sg"/>
+    <ownedEnd xmi:id="_Vh2KAfeMEeq1tZVZ8Q83sg" type="_RHxLYPeMEeq1tZVZ8Q83sg" association="_Vh1i8PeMEeq1tZVZ8Q83sg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_WBxnQPeMEeq1tZVZ8Q83sg" memberEnd="_WBxnQfeMEeq1tZVZ8Q83sg _WBxnQveMEeq1tZVZ8Q83sg">
+    <ownedEnd xmi:id="_WBxnQfeMEeq1tZVZ8Q83sg" type="_Oo8YgPeMEeq1tZVZ8Q83sg" association="_WBxnQPeMEeq1tZVZ8Q83sg"/>
+    <ownedEnd xmi:id="_WBxnQveMEeq1tZVZ8Q83sg" type="_RcHDsPeMEeq1tZVZ8Q83sg" association="_WBxnQPeMEeq1tZVZ8Q83sg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Wdt8YPeMEeq1tZVZ8Q83sg" memberEnd="_Wdt8YfeMEeq1tZVZ8Q83sg _Wdt8YveMEeq1tZVZ8Q83sg">
+    <ownedEnd xmi:id="_Wdt8YfeMEeq1tZVZ8Q83sg" type="_Oo8YgPeMEeq1tZVZ8Q83sg" association="_Wdt8YPeMEeq1tZVZ8Q83sg"/>
+    <ownedEnd xmi:id="_Wdt8YveMEeq1tZVZ8Q83sg" type="_Rykb4PeMEeq1tZVZ8Q83sg" association="_Wdt8YPeMEeq1tZVZ8Q83sg"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Package" xmi:id="_ec1vEPeMEeq1tZVZ8Q83sg" name="it.univpm.objProject">
+    <packagedElement xmi:type="uml:Package" xmi:id="_oBeuEPeMEeq1tZVZ8Q83sg" name="Model"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_o9LhUPeMEeq1tZVZ8Q83sg" name="Exception"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_p44UkPeMEeq1tZVZ8Q83sg" name="Services"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_tauDoPeMEeq1tZVZ8Q83sg" name="Util"/>
+    <packagedElement xmi:type="uml:Package" xmi:id="_xtrtoPeMEeq1tZVZ8Q83sg" name="Controller"/>
+    <packagedElement xmi:type="uml:Class" xmi:id="_1MuAUPeMEeq1tZVZ8Q83sg" name="ObjProjectApplication" visibility="public">
+      <ownedOperation xmi:id="_6-1v8PeMEeq1tZVZ8Q83sg" name="main"/>
+    </packagedElement>
+  </packagedElement>
 </uml:Model>
