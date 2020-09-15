@@ -19,6 +19,6 @@ public interface RevisionService {
 	public ArrayList<Metadata> MetadataVisual();
 
 	public ArrayList<Revision> RevisionVisual();
-	
+
 	public Stats StatsVisual(JSONObject jobj);
 }

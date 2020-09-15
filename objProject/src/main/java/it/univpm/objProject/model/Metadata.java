@@ -1,20 +1,16 @@
 package it.univpm.objProject.model;
 
 public class Metadata {
-	
+
 	public String alias;
 	public String sourceField;
 	public String type;
-
-	// Start of user code (user defined attributes for Metadati)
-
-	// End of user code
 
 	/**
 	 * The constructor.
 	 */
 	public Metadata(String alias, String sourceField, String type) {
-		//constructor for Metadati)
+
 		this.alias = alias;
 		this.sourceField = sourceField;
 		this.type = type;
@@ -61,6 +57,5 @@ public class Metadata {
 	public void setType(String type) {
 		this.type = type;
 	}
-	
-	
+
 }

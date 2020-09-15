@@ -4,48 +4,45 @@ import java.util.*;
 //import java.time.LocalDateTime;
 
 public class Revision {
-	
-		
-		public boolean is_deleted;
-		public ArrayList<Entry> entries = new ArrayList<Entry>();
 
-		/**
-		 * The constructor.
-		 */
-		public Revision() {
-			// Start of user code constructor for Revision)
-			super();
-			// End of user code
-		}
+	public boolean is_deleted;
+	public ArrayList<Entry> entries = new ArrayList<Entry>();
 
-		/**
-		 * @return the is_deleted
-		 */
-		public boolean getIs_deleted() {
-			return is_deleted;
-		}
+	/**
+	 * The constructor.
+	 */
+	public Revision() {
+		// Start of user code constructor for Revision)
+		super();
+		// End of user code
+	}
 
-		/**
-		 * @param is_deleted the is_deleted to set
-		 */
-		public void setIs_deleted(boolean is_deleted) {
-			this.is_deleted = is_deleted;
-		}
+	/**
+	 * @return the is_deleted
+	 */
+	public boolean getIs_deleted() {
+		return is_deleted;
+	}
 
-		/**
-		 * @return the entries
-		 */
-		public ArrayList<Entry> getEntries() {
-			return entries;
-		}
+	/**
+	 * @param is_deleted the is_deleted to set
+	 */
+	public void setIs_deleted(boolean is_deleted) {
+		this.is_deleted = is_deleted;
+	}
 
-		/**
-		 * @param entries the entries to set
-		 */
-		public void setEntries(Entry entriesadd) {
-			entries.add(entriesadd);
-		}
+	/**
+	 * @return the entries
+	 */
+	public ArrayList<Entry> getEntries() {
+		return entries;
+	}
 
-		
+	/**
+	 * @param entries the entries to set
+	 */
+	public void setEntries(Entry entriesadd) {
+		entries.add(entriesadd);
+	}
 
 }

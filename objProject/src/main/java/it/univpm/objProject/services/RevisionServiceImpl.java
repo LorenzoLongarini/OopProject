@@ -17,22 +17,13 @@ import it.univpm.objProject.util.RevisionStats;
 @Service
 public class RevisionServiceImpl implements RevisionService {
 
-	//private MetadataArray ma = new MetadataArray();
-	//private Revision re;
-
-	/*public RevisionServiceImpl() {
-		jParser re2 = new jParser();
-		re = re2.jParsing();
-		//ma = new MetadataArray();
-	}*/
-
 	@Override
 	public ArrayList<Revision> RevisionVisual() {
-		
+
 		Database re2 = new Database();
-		ArrayList<Revision> re = re2.CreateDatabase(); 
+		ArrayList<Revision> re = re2.CreateDatabase();
 		return re;
-		
+
 	}
 
 	@Override
@@ -40,7 +31,7 @@ public class RevisionServiceImpl implements RevisionService {
 		MetadataArray ma = new MetadataArray();
 		return ma.metadataArrCreat();
 	}
-	
+
 	@Override
 	public Stats StatsVisual(JSONObject jobj) {
 		RevisionStats rv_st = new RevisionStats();
