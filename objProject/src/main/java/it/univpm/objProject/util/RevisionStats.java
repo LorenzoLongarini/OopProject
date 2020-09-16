@@ -2,7 +2,6 @@ package it.univpm.objProject.util;
 
 import java.util.ArrayList;
 
-
 import org.json.simple.JSONObject;
 
 import it.univpm.objProject.model.Entry;
@@ -43,9 +42,10 @@ public class RevisionStats {
 		for (int i = 0; i < re.size(); i++) {
 			ent_arr = re.get(i).getEntries();
 			for (int j = 0; j < ent_arr.size(); j++) {
-				if (ent_arr.get(j).getName().compareTo(en1.getName()) != 0) {throw new GenericExternalException(
-						"chiavi inserite errate, inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");}
-				else {
+				if (ent_arr.get(j).getName().compareTo(en1.getName()) != 0) {
+					throw new GenericExternalException(
+							"chiavi inserite errate, inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");
+				} else {
 					st.setName(en1.getName());
 					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_day
 							&& ent_arr.get(j).getServer_modified().getEpochSecond() <= convert_seconds) {

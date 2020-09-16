@@ -20,7 +20,7 @@ import it.univpm.objProject.util.RevisionStats;
 public class RevisionServiceImpl implements RevisionService {
 
 	@Override
-	public ArrayList<Revision> RevisionVisual() {
+	public ArrayList<Revision> RevisionVisual() throws GenericInternalException, GenericExternalException {
 
 		Database re2 = new Database();
 		ArrayList<Revision> re = re2.CreateDatabase();

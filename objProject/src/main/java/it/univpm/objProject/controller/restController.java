@@ -24,7 +24,7 @@ public class restController {
 	RevisionServiceImpl revision_service;
 
 	@GetMapping(value = "/data")
-	public ArrayList<Revision> get_revision() {
+	public ArrayList<Revision> get_revision() throws GenericInternalException, GenericExternalException {
 		return revision_service.RevisionVisual();
 	}
 
@@ -34,8 +34,7 @@ public class restController {
 	}
 
 	@PostMapping(value = "/stats")
-	
-	
+
 	public Stats post_stats(@RequestBody Map<?, ?> info) throws GenericInternalException, GenericExternalException {
 		JSONObject jobj = new JSONObject(info);
 		return revision_service.StatsVisual(jobj);

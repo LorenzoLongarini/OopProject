@@ -20,7 +20,7 @@ public interface RevisionService {
 
 	public ArrayList<Metadata> MetadataVisual();
 
-	public ArrayList<Revision> RevisionVisual();
+	public ArrayList<Revision> RevisionVisual() throws GenericInternalException, GenericExternalException;
 
 	public Stats StatsVisual(JSONObject jobj) throws GenericInternalException, GenericExternalException;
 }
