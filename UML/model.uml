@@ -113,7 +113,11 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
       </ownedAttribute>
       <ownedOperation xmi:id="_tWwwUPdCEeq1tZVZ8Q83sg" name="getName"/>
-      <ownedOperation xmi:id="_t7RLkPdCEeq1tZVZ8Q83sg" name="setName"/>
+      <ownedOperation xmi:id="_t7RLkPdCEeq1tZVZ8Q83sg" name="setName">
+        <ownedParameter xmi:id="_okSfwPgGEeq2s5G8mFP1aQ" name="name">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
       <ownedOperation xmi:id="_uJWD0PdCEeq1tZVZ8Q83sg" name="getRev_prev_day"/>
       <ownedOperation xmi:id="_uSA3oPdCEeq1tZVZ8Q83sg" name="setRev_prev_per_day"/>
       <ownedOperation xmi:id="_uZexkPdCEeq1tZVZ8Q83sg" name="getRev_prev_week"/>
@@ -162,7 +166,33 @@
       <ownedOperation xmi:id="_UwI4sPdqEeq1tZVZ8Q83sg" name="StatsVisual"/>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Package" xmi:id="_HJtUsPdpEeq1tZVZ8Q83sg" name="Exception"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_HJtUsPdpEeq1tZVZ8Q83sg" name="Exception">
+    <packagedElement xmi:type="uml:Class" xmi:id="_whSR4PgOEeq2s5G8mFP1aQ" name="GenericInternalException" visibility="public">
+      <generalization xmi:id="_1mrB4PgPEeq2s5G8mFP1aQ" general="_RuxKcPgPEeq2s5G8mFP1aQ"/>
+      <ownedAttribute xmi:id="_UGoZsPgPEeq2s5G8mFP1aQ" name="serialVersionUID" visibility="private" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_b_6qIPgPEeq2s5G8mFP1aQ" name="GenericInternalException"/>
+      <ownedOperation xmi:id="_cWYpYPgPEeq2s5G8mFP1aQ" name="GenericInternalException">
+        <ownedParameter xmi:id="_iCMVoPgPEeq2s5G8mFP1aQ" name="warning">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_yvw7oPgOEeq2s5G8mFP1aQ" name="GenericExternalException" visibility="public">
+      <generalization xmi:id="__F9m0PgPEeq2s5G8mFP1aQ" general="_RuxKcPgPEeq2s5G8mFP1aQ"/>
+      <ownedAttribute xmi:id="_npwbEPgPEeq2s5G8mFP1aQ" name="serialVersionUID" visibility="private" isStatic="true">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#long"/>
+      </ownedAttribute>
+      <ownedOperation xmi:id="_siUsgPgPEeq2s5G8mFP1aQ" name="GenericExternalException"/>
+      <ownedOperation xmi:id="_sovdkPgPEeq2s5G8mFP1aQ" name="GenericExternalException">
+        <ownedParameter xmi:id="_ySR48PgPEeq2s5G8mFP1aQ" name="warning">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Class" xmi:id="_RuxKcPgPEeq2s5G8mFP1aQ" name="Exception" visibility="public"/>
+  </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_Oo8YgPeMEeq1tZVZ8Q83sg" name="User">
     <eAnnotations xmi:id="_Oo8YgfeMEeq1tZVZ8Q83sg" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <details xmi:id="_Oo8YgveMEeq1tZVZ8Q83sg" key="Human"/>
