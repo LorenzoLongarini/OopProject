@@ -21,7 +21,8 @@ public class RevisionStats {
 			en1.setName((String) jobj.get("name"));
 		} catch (Exception e) {
 			throw new GenericExternalException(
-					"chiavi inserite errate, inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");
+					"chiavi inserite errate, "
+					+ "inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");
 		}
 
 		Database re2 = new Database();
@@ -44,7 +45,8 @@ public class RevisionStats {
 			for (int j = 0; j < ent_arr.size(); j++) {
 				if (ent_arr.get(j).getName().compareTo(en1.getName()) != 0) {
 					throw new GenericExternalException(
-							"chiavi inserite errate, inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");
+							"chiavi inserite errate, "
+							+ "inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");
 				} else {
 					st.setName(en1.getName());
 					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_day
@@ -73,7 +75,8 @@ public class RevisionStats {
 		} else {
 			for (int k = 0; k < (stat_arr1.size() - 1); k++) {
 
-				tot_sec_d += (stat_arr1.get(k).getAv_time_prev_day() - stat_arr1.get(k + 1).getAv_time_prev_day());
+				tot_sec_d += (stat_arr1.get(k).getAv_time_prev_day()
+						- stat_arr1.get(k + 1).getAv_time_prev_day());
 
 			}
 		}
@@ -84,7 +87,8 @@ public class RevisionStats {
 		} else {
 			for (int k = 0; k < stat_arr2.size() - 1; k++) {
 
-				tot_sec_w += (stat_arr2.get(k).getAv_time_prev_week() - stat_arr2.get(k + 1).getAv_time_prev_week());
+				tot_sec_w += (stat_arr2.get(k).getAv_time_prev_week()
+						- stat_arr2.get(k + 1).getAv_time_prev_week());
 
 			}
 		}
