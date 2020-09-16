@@ -2,10 +2,12 @@ package it.univpm.objProject.services;
 
 import java.util.ArrayList;
 
+import it.univpm.objProject.exception.GenericExternalException;
+import it.univpm.objProject.exception.GenericInternalException;
 import it.univpm.objProject.model.Metadata;
 import it.univpm.objProject.model.Revision;
 import it.univpm.objProject.model.Stats;
-
+//import it.univpm.objProject.exception.GenericInternalException;
 import org.json.simple.JSONObject;
 //import it.univpm.objProject.services.Database;
 //import it.univpm.objProject.services.jParser;
@@ -33,7 +35,7 @@ public class RevisionServiceImpl implements RevisionService {
 	}
 
 	@Override
-	public Stats StatsVisual(JSONObject jobj) {
+	public Stats StatsVisual(JSONObject jobj) throws GenericInternalException, GenericExternalException {
 		RevisionStats rv_st = new RevisionStats();
 		Stats st = new Stats();
 		st = rv_st.create_stats(jobj);

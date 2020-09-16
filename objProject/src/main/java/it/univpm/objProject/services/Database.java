@@ -86,6 +86,7 @@ public class Database {
 			Entry ent;
 			JSONArray enobj = (JSONArray) jobj.get("entries");
 
+			//Eccezione
 			for (int j = 0; j < enobj.size(); j++) {
 				ent = new Entry();
 				JSONObject jobj2 = (JSONObject) enobj.get(j);

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import org.json.simple.JSONObject;
 import org.springframework.stereotype.Service;
 
+import it.univpm.objProject.exception.GenericExternalException;
+import it.univpm.objProject.exception.GenericInternalException;
 import it.univpm.objProject.model.Metadata;
 import it.univpm.objProject.model.Revision;
 import it.univpm.objProject.model.Stats;
@@ -20,5 +22,5 @@ public interface RevisionService {
 
 	public ArrayList<Revision> RevisionVisual();
 
-	public Stats StatsVisual(JSONObject jobj);
+	public Stats StatsVisual(JSONObject jobj) throws GenericInternalException, GenericExternalException;
 }

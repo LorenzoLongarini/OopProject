@@ -1,6 +1,9 @@
 package it.univpm.objProject.controller;
 
 import org.springframework.web.bind.annotation.RestController;
+
+import it.univpm.objProject.exception.GenericExternalException;
+import it.univpm.objProject.exception.GenericInternalException;
 import it.univpm.objProject.model.*;
 import java.util.ArrayList;
 import java.util.Map;
@@ -31,7 +34,9 @@ public class restController {
 	}
 
 	@PostMapping(value = "/stats")
-	public Stats post_stats(@RequestBody Map info) {
+	
+	
+	public Stats post_stats(@RequestBody Map<?, ?> info) throws GenericInternalException, GenericExternalException {
 		JSONObject jobj = new JSONObject(info);
 		return revision_service.StatsVisual(jobj);
 	}
