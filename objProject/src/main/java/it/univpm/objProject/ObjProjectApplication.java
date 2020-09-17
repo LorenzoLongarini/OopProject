@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
+ * main del web service che permette di avviarlo
  * @author Lorenzo
  *
  */

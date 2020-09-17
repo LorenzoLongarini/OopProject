@@ -16,9 +16,16 @@ import org.springframework.stereotype.Service;
 import it.univpm.objProject.util.MetadataArray;
 import it.univpm.objProject.util.RevisionStats;
 
+/**
+ * @author Lorenzo
+ *
+ */
 @Service
 public class RevisionServiceImpl implements RevisionService {
 
+	/**
+	 *
+	 */
 	@Override
 	public ArrayList<Revision> RevisionVisual() throws GenericInternalException, GenericExternalException {
 
@@ -28,12 +35,18 @@ public class RevisionServiceImpl implements RevisionService {
 
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public ArrayList<Metadata> MetadataVisual() {
 		MetadataArray ma = new MetadataArray();
 		return ma.metadataArrCreat();
 	}
 
+	/**
+	 *
+	 */
 	@Override
 	public Stats StatsVisual(JSONObject jobj) throws GenericInternalException, GenericExternalException {
 		RevisionStats rv_st = new RevisionStats();

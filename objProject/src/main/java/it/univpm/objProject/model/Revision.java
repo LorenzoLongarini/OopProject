@@ -3,7 +3,15 @@ package it.univpm.objProject.model;
 import java.util.*;
 //import java.time.LocalDateTime;
 
+/**
+ * @author Lorenzo
+ *
+ */
 public class Revision {
+	/**
+	 * Description of Revision
+	 *
+	 */
 
 	private boolean is_deleted;
 	public ArrayList<Entry> entries = new ArrayList<Entry>();

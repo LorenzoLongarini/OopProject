@@ -1,5 +1,9 @@
 package it.univpm.objProject.model;
 
+/**
+ * @author Lorenzo
+ *
+ */
 public class Metadata {
 
 	private String alias;

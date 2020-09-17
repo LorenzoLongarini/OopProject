@@ -11,8 +11,18 @@ import it.univpm.objProject.services.Database;
 import it.univpm.objProject.exception.GenericExternalException;
 import it.univpm.objProject.exception.GenericInternalException;
 
+/**
+ * @author Lorenzo
+ *
+ */
 public class RevisionStats {
 
+	/**
+	 * @param jobj
+	 * @return
+	 * @throws GenericInternalException
+	 * @throws GenericExternalException
+	 */
 	public Stats create_stats(JSONObject jobj) throws GenericInternalException, GenericExternalException {
 
 		Entry en1 = new Entry();
@@ -43,11 +53,8 @@ public class RevisionStats {
 		for (int i = 0; i < re.size(); i++) {
 			ent_arr = re.get(i).getEntries();
 			for (int j = 0; j < ent_arr.size(); j++) {
-				if (ent_arr.get(j).getName().compareTo(en1.getName()) != 0) {
-					throw new GenericExternalException(
-							"chiavi inserite errate, "
-							+ "inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");
-				} else {
+				if (ent_arr.get(j).getName().compareTo(en1.getName()) == 0) {
+		
 					st.setName(en1.getName());
 					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_day
 							&& ent_arr.get(j).getServer_modified().getEpochSecond() <= convert_seconds) {

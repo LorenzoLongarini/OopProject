@@ -1,5 +1,9 @@
 package it.univpm.objProject.model;
 
+/**
+ * @author Lorenzo
+ *
+ */
 public class Stats {
 	private String name;
 	private int rev_prev_day;
@@ -67,6 +71,9 @@ public class Stats {
 
 	/**
 	 * @param av_time_per_day the av_time_per_day to set
+	 */
+	/**
+	 * @param av_time_per_day
 	 */
 	public void setAv_time_prev_day(long av_time_per_day) {
 		this.av_time_prev_day = av_time_per_day;

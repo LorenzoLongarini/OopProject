@@ -3,10 +3,17 @@ package it.univpm.objProject.util;
 import java.util.ArrayList;
 import it.univpm.objProject.model.Metadata;
 
+/**
+ * @author Lorenzo
+ *
+ */
 public class MetadataArray {
 
 	private ArrayList<Metadata> metadataArr = new ArrayList<Metadata>();
 
+	/**
+	 * @return
+	 */
 	public ArrayList<Metadata> metadataArrCreat() {
 
 		metadataArr.add(new Metadata("is_deleted",

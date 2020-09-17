@@ -24,8 +24,17 @@ import it.univpm.objProject.exception.GenericInternalException;
 import it.univpm.objProject.model.Entry;
 import it.univpm.objProject.model.Revision;
 
+/**
+ * @author Lorenzo
+ *
+ */
 public class Database {
 
+	/**
+	 * @return
+	 * @throws GenericInternalException
+	 * @throws GenericExternalException
+	 */
 	public ArrayList<Revision> CreateDatabase() throws GenericInternalException, GenericExternalException {
 
 		String[] file_names = new String[5];
