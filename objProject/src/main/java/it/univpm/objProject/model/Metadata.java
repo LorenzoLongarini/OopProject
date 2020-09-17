@@ -1,6 +1,7 @@
 package it.univpm.objProject.model;
 
 /**
+ * Classe per la modellazione del singolo metadato costituito dei tre campi alias, sourceField e type
  * @author Lorenzo
  *
  */

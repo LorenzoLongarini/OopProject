@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import it.univpm.objProject.model.Metadata;
 
 /**
+ * @see Metadata
+ * @see Controller
+ * @see RevisionService
+ * @see RevisionServiceImpl
  * @author Lorenzo
  *
  */
@@ -12,7 +16,8 @@ public class MetadataArray {
 	private ArrayList<Metadata> metadataArr = new ArrayList<Metadata>();
 
 	/**
-	 * @return
+	 * @return metadataArr, rray di Metadata che contiene tutte le informazioni utili
+	 *  alla comprensione dei dati contenuti nel json
 	 */
 	public ArrayList<Metadata> metadataArrCreat() {
 

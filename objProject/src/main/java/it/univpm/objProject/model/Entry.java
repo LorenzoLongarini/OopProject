@@ -1,13 +1,20 @@
 package it.univpm.objProject.model;
 
 import java.time.Instant;
-
-public class Entry {
 	/**
-	 * Description of Entry.
+	 * Elementi presenti all'interno dell'entry della revision
+	 * i parametri client_modified e server_modified sono di tipo String nel json,
+	 * qui sono stati gestiti come Instant per poi facilitare la loro manipolazione nella 
+	 * crezione delle statistiche relative ai tempi medi
 	 * 
+	 * @see Revision
+	 * @see RevisionStats
+	 * @see RevisionService
+	 * @see RevisionServiceImpl
 	 * @author Lorenzo
 	 */
+public class Entry {
+
 	private String name;
 	private String path_lower;
 	private String path_display;
@@ -88,7 +95,9 @@ public class Entry {
 	}
 
 	/**
-	 * @param client_modified the client_modified to set
+	 * Viene effettuato il parse dalla stringa ottenuta con il json
+	 * in un oggetto di tipo Instant e settato come client_modified
+	 * @param client_modified 
 	 */
 	public void setClient_modified(String client_modified) {
 		Instant C_instant = Instant.parse(client_modified);
@@ -103,8 +112,9 @@ public class Entry {
 		return server_modified;
 	}
 
-	/**
-	 * @param server_modified the server_modified to set
+	/** * Viene effettuato il parse dalla stringa ottenuta con il json
+	 * in un oggetto di tipo Instant e settato come server_modified
+	 * @param server_modified
 	 */
 	public void setServer_modified(String server_modified) {
 		Instant S_instant = Instant.parse(server_modified);

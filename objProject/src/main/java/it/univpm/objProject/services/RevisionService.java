@@ -12,6 +12,8 @@ import it.univpm.objProject.model.Revision;
 import it.univpm.objProject.model.Stats;
 
 /**
+ * Interfaccia delle funzioni utili al controller per effettuare le varie operazioni
+ * @see RevisionServiceImpl
  * @author Lorenzo
  *
  */

@@ -1,6 +1,9 @@
 package it.univpm.objProject.model;
 
 /**
+ * Classe modello della singola stat
+ * @see RevisionStats
+ * @see Controller
  * @author Lorenzo
  *
  */
@@ -11,14 +14,6 @@ public class Stats {
 	private long av_time_prev_day;
 	private long av_time_prev_week;
 
-	public Stats() {
-		super();
-		this.name = null;
-		this.rev_prev_day = 0;
-		this.rev_prev_week = 0;
-		this.av_time_prev_day = 0;
-		this.av_time_prev_week = 0;
-	}
 
 	/**
 	 * @return the name

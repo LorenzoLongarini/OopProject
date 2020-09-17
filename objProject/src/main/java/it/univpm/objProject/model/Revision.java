@@ -1,17 +1,18 @@
 package it.univpm.objProject.model;
 
 import java.util.*;
-//import java.time.LocalDateTime;
 
 /**
+ * Modello della singola revision costituita da un parametro booleano e un arraylist di entry
+ * @see Entry
+ * @see RevisionStats
+ * @see RevisionService
+ * @see RevisionServiceImpl
+ * @see Controller
  * @author Lorenzo
  *
  */
 public class Revision {
-	/**
-	 * Description of Revision
-	 *
-	 */
 
 	private boolean is_deleted;
 	public ArrayList<Entry> entries = new ArrayList<Entry>();

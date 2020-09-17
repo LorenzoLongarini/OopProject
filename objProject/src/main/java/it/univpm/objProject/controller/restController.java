@@ -39,6 +39,9 @@ public class restController {
 	 * @return un arraylist di revisions presenti in dropbox
 	 * @throws GenericInternalException
 	 * @throws GenericExternalException
+	 * @see Revision
+	 * @see Entry
+	 * @see Database
 	 */
 	@GetMapping(value = "/data")
 	public ArrayList<Revision> get_revision() throws GenericInternalException, GenericExternalException {
@@ -49,6 +52,8 @@ public class restController {
 	 * Consiste in una chiamata Get con rotta /metadata
 	 * @return un arraylist contenente i metadati utili alla 
 	 * comprensione dei dati presenti nel dataset
+	 * @see Metadata
+	 * @see MetadataArray
 	 */
 	@GetMapping(value = "/metadata")
 	public ArrayList<Metadata> get_metadata() {
@@ -62,6 +67,8 @@ public class restController {
 	 * le revisioni
 	 * @throws GenericInternalException
 	 * @throws GenericExternalException
+	 * @see Stats
+	 * @see RevisionStats
 	 */
 	@PostMapping(value = "/stats")
 

@@ -12,6 +12,21 @@ import it.univpm.objProject.exception.GenericExternalException;
 import it.univpm.objProject.exception.GenericInternalException;
 
 /**
+ * La seguente classe permette di effettuare statistiche sulle revisioni scaricate nel database.
+ * In ingresso viene ricevuto l'oggetto inserito in Postman, il quale viene inserito in un oggetto di tipo Entry.
+ * Una volta scaricato il json ed inserito nell'opportuno array: si scorre l'array e si effettuano dei controlli:
+ * se i parametri rispettano le condizioni allora viene prima settato il nome dell'oggetto Stats che verrà
+ * restituito e il numero di revisioni giornaliere e settimanali.
+ * Per settare i tempi medi viene sfruttata un'altra classe di tipo Stats e poi i dati inseriti in due opportuni
+ * arraylist: si scorrono questi ultimi così da ricavare il tempo medio tra una revisione e le precedenti. 
+ * 
+ * @see Revision
+ * @see Entry
+ * @see Stats
+ * @see Database
+ * @see RevisionService
+ * @see RevisionServiceImpl
+ * @see Controller
  * @author Lorenzo
  *
  */
@@ -19,7 +34,8 @@ public class RevisionStats {
 
 	/**
 	 * @param jobj
-	 * @return
+	 * @return st, un oggetto di tipo Stats che contiene le informazioni relative alle statistiche
+	 * su numerosità e tempi medi per giorno e per settimana
 	 * @throws GenericInternalException
 	 * @throws GenericExternalException
 	 */

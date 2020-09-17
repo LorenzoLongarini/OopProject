@@ -2,7 +2,7 @@ package it.univpm.objProject.exception;
 
 /**
  * @author Lorenzo
- *
+ * Eccezione personalizzata per la gestione delle eccezioni interne
  */
 public class GenericInternalException extends Exception {
 

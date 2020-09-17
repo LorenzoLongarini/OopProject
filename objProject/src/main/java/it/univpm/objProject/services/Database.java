@@ -25,13 +25,18 @@ import it.univpm.objProject.model.Entry;
 import it.univpm.objProject.model.Revision;
 
 /**
+ * La seguente classe scarica il json per cinque volte, tanti quanti sono i file presenti in dropbox.
+ * Ogni volta che il json viene scaricato, viene inserito in un oggetto di tipo Revision.
+ * Infine l'oggetto viene aggiunto all'arraylist di tipo Revision.
  * @author Lorenzo
  *
  */
 public class Database {
 
 	/**
-	 * @return
+	 * @return revisions , un arraylist contenente tutte le revisioni relativi ai file nel dropbox
+	 * @see Revision
+	 * @see Entry
 	 * @throws GenericInternalException
 	 * @throws GenericExternalException
 	 */
