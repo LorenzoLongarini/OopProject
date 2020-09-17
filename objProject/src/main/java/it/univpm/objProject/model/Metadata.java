@@ -1,8 +1,11 @@
 package it.univpm.objProject.model;
 
 /**
- * Classe per la modellazione del singolo metadato costituito dei tre campi alias, sourceField e type
- * @author Lorenzo
+ * Classe per la modellazione del singolo metadato costituito dei tre campi
+ * alias, sourceField e type.
+ * 
+ * @see it.univpm.objProject.util.MetadataArray
+ * @author Lorenzo Longarini
  *
  */
 public class Metadata {
@@ -22,28 +25,28 @@ public class Metadata {
 	}
 
 	/**
-	 * @return the key
+	 * @return the alias
 	 */
 	public String getAlias() {
 		return alias;
 	}
 
 	/**
-	 * @param key the key to set
+	 * @param alias the alias to set
 	 */
 	public void setAlias(String alias) {
 		this.alias = alias;
 	}
 
 	/**
-	 * @return the value
+	 * @return the sourceField
 	 */
 	public String getSourceField() {
 		return sourceField;
 	}
 
 	/**
-	 * @param value the value to set
+	 * @param sourceField the sourceField to set
 	 */
 	public void setSourceField(String sourceField) {
 		this.sourceField = sourceField;

@@ -3,13 +3,15 @@ package it.univpm.objProject.model;
 import java.util.*;
 
 /**
- * Modello della singola revision costituita da un parametro booleano e un arraylist di entry
+ * Modello della singola revision costituita da un parametro booleano e un
+ * arraylist di Entry.
+ * 
  * @see Entry
- * @see RevisionStats
- * @see RevisionService
- * @see RevisionServiceImpl
- * @see Controller
- * @author Lorenzo
+ * @see it.univpm.objProject.util.RevisionStats
+ * @see it.univpm.objProject.services.RevisionService
+ * @see it.univpm.objProject.services.RevisionServiceImpl
+ * @see it.univpm.objProject.controller.restController
+ * @author Lorenzo Longarini
  *
  */
 public class Revision {
@@ -48,7 +50,7 @@ public class Revision {
 	}
 
 	/**
-	 * @param entries the entries to set
+	 * @param entriesadd the entries to set
 	 */
 	public void setEntries(Entry entriesadd) {
 		entries.add(entriesadd);

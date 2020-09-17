@@ -12,30 +12,34 @@ import it.univpm.objProject.exception.GenericExternalException;
 import it.univpm.objProject.exception.GenericInternalException;
 
 /**
- * La seguente classe permette di effettuare statistiche sulle revisioni scaricate nel database.
- * In ingresso viene ricevuto l'oggetto inserito in Postman, il quale viene inserito in un oggetto di tipo Entry.
- * Una volta scaricato il json ed inserito nell'opportuno array: si scorre l'array e si effettuano dei controlli:
- * se i parametri rispettano le condizioni allora viene prima settato il nome dell'oggetto Stats che verrà
- * restituito e il numero di revisioni giornaliere e settimanali.
- * Per settare i tempi medi viene sfruttata un'altra classe di tipo Stats e poi i dati inseriti in due opportuni
- * arraylist: si scorrono questi ultimi così da ricavare il tempo medio tra una revisione e le precedenti. 
+ * La seguente classe permette di effettuare statistiche sulle revisioni
+ * scaricate nel database. In ingresso viene ricevuto l'oggetto inserito in
+ * Postman, il quale viene inserito in un oggetto di tipo Entry. Una volta
+ * scaricato il json, esso viene inserito nell'opportuno array: si scorre
+ * l'array e si effettuano dei controlli: se i parametri rispettano le
+ * condizioni allora viene prima settato il nome dell'oggetto Stats che verrà
+ * restituito e il numero di revisioni giornaliere e settimanali. Per settare i
+ * tempi medi viene sfruttata un'altra classe di tipo Stats e poi i dati
+ * inseriti in due opportuni arraylist: si scorrono questi ultimi così da
+ * ricavare il tempo medio tra una revisione e le precedenti.
  * 
  * @see Revision
  * @see Entry
  * @see Stats
  * @see Database
- * @see RevisionService
- * @see RevisionServiceImpl
- * @see Controller
- * @author Lorenzo
+ * @see it.univpm.objProject.services.RevisionService
+ * @see it.univpm.objProject.services.RevisionServiceImpl
+ * @see it.univpm.objProject.controller.restController
+ * @author Lorenzo Longarini
  *
  */
 public class RevisionStats {
 
 	/**
 	 * @param jobj
-	 * @return st, un oggetto di tipo Stats che contiene le informazioni relative alle statistiche
-	 * su numerosità e tempi medi per giorno e per settimana
+	 * @return st, un oggetto di tipo Stats che contiene le informazioni relative
+	 *         alle statistiche su numerosità e tempi medi per giorno e per
+	 *         settimana
 	 * @throws GenericInternalException
 	 * @throws GenericExternalException
 	 */
@@ -46,8 +50,7 @@ public class RevisionStats {
 			en1.setServer_modified((String) jobj.get("server_modified"));
 			en1.setName((String) jobj.get("name"));
 		} catch (Exception e) {
-			throw new GenericExternalException(
-					"chiavi inserite errate, "
+			throw new GenericExternalException("chiavi inserite errate, "
 					+ "inserire: 'server_modified' come prima chiave e 'name' come seconda chiave");
 		}
 
@@ -70,7 +73,7 @@ public class RevisionStats {
 			ent_arr = re.get(i).getEntries();
 			for (int j = 0; j < ent_arr.size(); j++) {
 				if (ent_arr.get(j).getName().compareTo(en1.getName()) == 0) {
-		
+
 					st.setName(en1.getName());
 					if (ent_arr.get(j).getServer_modified().getEpochSecond() >= p_day
 							&& ent_arr.get(j).getServer_modified().getEpochSecond() <= convert_seconds) {
@@ -98,8 +101,7 @@ public class RevisionStats {
 		} else {
 			for (int k = 0; k < (stat_arr1.size() - 1); k++) {
 
-				tot_sec_d += (stat_arr1.get(k).getAv_time_prev_day()
-						- stat_arr1.get(k + 1).getAv_time_prev_day());
+				tot_sec_d += (stat_arr1.get(k).getAv_time_prev_day() - stat_arr1.get(k + 1).getAv_time_prev_day());
 
 			}
 		}
@@ -110,8 +112,7 @@ public class RevisionStats {
 		} else {
 			for (int k = 0; k < stat_arr2.size() - 1; k++) {
 
-				tot_sec_w += (stat_arr2.get(k).getAv_time_prev_week()
-						- stat_arr2.get(k + 1).getAv_time_prev_week());
+				tot_sec_w += (stat_arr2.get(k).getAv_time_prev_week() - stat_arr2.get(k + 1).getAv_time_prev_week());
 
 			}
 		}

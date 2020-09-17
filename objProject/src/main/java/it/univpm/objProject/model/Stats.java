@@ -1,10 +1,11 @@
 package it.univpm.objProject.model;
 
 /**
- * Classe modello della singola stat
- * @see RevisionStats
- * @see Controller
- * @author Lorenzo
+ * Classe modello della singola stat.
+ * 
+ * @see it.univpm.objProject.util.RevisionStats
+ * @see it.univpm.objProject.controller.restController
+ * @author Lorenzo Longarini
  *
  */
 public class Stats {
@@ -13,7 +14,6 @@ public class Stats {
 	private int rev_prev_week;
 	private long av_time_prev_day;
 	private long av_time_prev_week;
-
 
 	/**
 	 * @return the name
@@ -67,9 +67,7 @@ public class Stats {
 	/**
 	 * @param av_time_per_day the av_time_per_day to set
 	 */
-	/**
-	 * @param av_time_per_day
-	 */
+	
 	public void setAv_time_prev_day(long av_time_per_day) {
 		this.av_time_prev_day = av_time_per_day;
 	}

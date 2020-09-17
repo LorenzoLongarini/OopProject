@@ -17,8 +17,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 /**
- * Controller per la gestione delle chiamate
- * @author Lorenzo
+ * Controller per la gestione delle chiamate.
+ * 
+ * @author Lorenzo Longarini
  *
  */
 
@@ -27,21 +28,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class restController {
 
 	/**
-	 * crea un'istanza del service (RevisionServiceImpl) 
-	 * questa verrà utilizzata per effettuare le varie funzioni 
-	 * del controller
+	 * Crea un'istanza del service (RevisionServiceImpl) questa verrà utilizzata per
+	 * effettuare le varie funzioni del controller.
 	 */
 	@Autowired
 	RevisionServiceImpl revision_service;
 
 	/**
-	 * Consiste in una chiamata Get con rotta /data
+	 * Consiste in una chiamata Get con rotta /data.
+	 * 
 	 * @return un arraylist di revisions presenti in dropbox
 	 * @throws GenericInternalException
 	 * @throws GenericExternalException
 	 * @see Revision
 	 * @see Entry
-	 * @see Database
+	 * @see it.univpm.objProject.services.Database
 	 */
 	@GetMapping(value = "/data")
 	public ArrayList<Revision> get_revision() throws GenericInternalException, GenericExternalException {
@@ -49,11 +50,12 @@ public class restController {
 	}
 
 	/**
-	 * Consiste in una chiamata Get con rotta /metadata
-	 * @return un arraylist contenente i metadati utili alla 
-	 * comprensione dei dati presenti nel dataset
+	 * Consiste in una chiamata Get con rotta /metadata.
+	 * 
+	 * @return un arraylist contenente i metadati utili alla comprensione dei dati
+	 *         presenti nel dataset
 	 * @see Metadata
-	 * @see MetadataArray
+	 * @see it.univpm.objProject.util.MetadataArray
 	 */
 	@GetMapping(value = "/metadata")
 	public ArrayList<Metadata> get_metadata() {
@@ -62,13 +64,12 @@ public class restController {
 
 	/**
 	 * @param info
-	 * @return stat, un oggetto di tipo Stats contenente le informazioni
-	 * su numero di revisioni giornaliere e settimanali e tempi medi tra
-	 * le revisioni
+	 * @return stat, un oggetto di tipo Stats contenente le informazioni su numero
+	 *         di revisioni giornaliere e settimanali e tempi medi tra le revisioni.
 	 * @throws GenericInternalException
 	 * @throws GenericExternalException
 	 * @see Stats
-	 * @see RevisionStats
+	 * @see it.univpm.objProject.util.RevisionStats
 	 */
 	@PostMapping(value = "/stats")
 

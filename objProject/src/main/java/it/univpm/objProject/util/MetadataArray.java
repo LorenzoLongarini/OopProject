@@ -5,10 +5,10 @@ import it.univpm.objProject.model.Metadata;
 
 /**
  * @see Metadata
- * @see Controller
- * @see RevisionService
- * @see RevisionServiceImpl
- * @author Lorenzo
+ * @see it.univpm.objProject.controller.restController
+ * @see it.univpm.objProject.services.RevisionService
+ * @see it.univpm.objProject.services.RevisionServiceImpl
+ * @author Lorenzo Longarini
  *
  */
 public class MetadataArray {
@@ -16,8 +16,8 @@ public class MetadataArray {
 	private ArrayList<Metadata> metadataArr = new ArrayList<Metadata>();
 
 	/**
-	 * @return metadataArr, rray di Metadata che contiene tutte le informazioni utili
-	 *  alla comprensione dei dati contenuti nel json
+	 * @return metadataArr, array di Metadata che contiene tutte le informazioni
+	 *         utili alla comprensione dei dati contenuti nel json.
 	 */
 	public ArrayList<Metadata> metadataArrCreat() {
 

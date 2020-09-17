@@ -17,22 +17,25 @@ import it.univpm.objProject.util.MetadataArray;
 import it.univpm.objProject.util.RevisionStats;
 
 /**
- * Implementazione della classe RevisionService, in cui le varie funzioni dell'interfaccia vengono implementate
+ * Implementazione della classe RevisionService, in cui le varie funzioni
+ * dell'interfaccia vengono implementate.
+ * 
  * @see RevisionService
- * @see Controller
+ * @see it.univpm.objProject.controller.restController
  * @see Revision
  * @see Stats
  * @see MetadataArray
  * @see RevisionStats
  * @see Database
- * @author Lorenzo
+ * @author Lorenzo Longarini
  *
  */
 @Service
 public class RevisionServiceImpl implements RevisionService {
 
 	/**
-	 * @return re, un arraylist di revision contenente tutte le revisioni di ogni file nel dropbox
+	 * @return re, un arraylist di revision contenente tutte le revisioni di ogni
+	 *         file nel dropbox
 	 */
 	@Override
 	public ArrayList<Revision> RevisionVisual() throws GenericInternalException, GenericExternalException {
@@ -44,7 +47,8 @@ public class RevisionServiceImpl implements RevisionService {
 	}
 
 	/**
-	 * @return ma, un arraylist contenente i metadati utili a conoscere i dati scaricati con il json
+	 * @return ma, un arraylist contenente i metadati utili a conoscere i dati
+	 *         scaricati con il json
 	 */
 	@Override
 	public ArrayList<Metadata> MetadataVisual() {
@@ -53,7 +57,8 @@ public class RevisionServiceImpl implements RevisionService {
 	}
 
 	/**
-	 * @return st, un oggetto di tipo Stats contenente tutte le informazioni riguardanti le statistiche
+	 * @return st, un oggetto di tipo Stats contenente tutte le informazioni
+	 *         riguardanti le statistiche
 	 */
 	@Override
 	public Stats StatsVisual(JSONObject jobj) throws GenericInternalException, GenericExternalException {

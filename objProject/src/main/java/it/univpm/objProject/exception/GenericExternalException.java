@@ -1,9 +1,9 @@
 package it.univpm.objProject.exception;
 
 /**
- * @author Lorenzo
- * Eccezione personalizzata per la gestione delle eccezioni esterne
- *
+ * Eccezione personalizzata per la gestione delle eccezioni esterne.
+ * 
+ * @author Lorenzo Longarini
  */
 public class GenericExternalException extends Exception {
 
