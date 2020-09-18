@@ -25,13 +25,17 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 
 ### Struttura e Funzionamento
 Per il corretto funzionamento, effettuare il download oppure clonare il progetto in un opportuno ide (quale Eclipse) così da poter avviare il web Service.
-Avviata l'applicazione come Spring Boot Application, il Web Service sarà in ascolto alla porta [http://localhost:8080](http://localhost:8080/). Per una più semplice visualizzazione dei dati che verranno restituiti si consiglia l'utilizzo di Postman (un'applicazione del browser Google Chrome che consente di costruire, testare e documentare API).
+
+Avviata l'applicazione come Spring Boot Application, il Web Service sarà in ascolto alla porta [http://localhost:8080](http://localhost:8080/). 
+
+Per una più semplice visualizzazione dei dati che verranno restituiti si consiglia l'utilizzo di Postman (un'applicazione del browser Google Chrome che consente di costruire, testare e documentare API).
+
 Le possibilità dell'utente sono mostrate nel seguente diagramma dei casi d'uso: 
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/User.jpg" width="400" height="256">
 
 TIPO RICHIESTA | ROTTA | FUNZIONE |
 -|-|-|
-GET | /data | Restituisce tutte le revisioni sui file presenti nel Dropbox con path TxtDoc in formato json. |
+GET | /data | Restituisce tutte le revisioni dei file presenti nel Dropbox con path TxtDoc in formato json. |
 GET | /metadata | Restituisce tutte le informazioni utili (formato json) alla comprensione del json delle revisioni.
 POST | /stats | Restituisce statistiche relative a numerosità e tempi medi  delle revisioni relative ad una data specificata dall'utente all'interno del body della richiesta.
 
@@ -39,56 +43,73 @@ POST | /stats | Restituisce statistiche relative a numerosità e tempi medi  del
 
 Il programma è strutturato in cinque package come segue :
 
+
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Packages.jpg" width="400" height="256">
  
 La classe contente il main è situato all'interno di  it.univpm.OopProject ed è la classe che consente l'avvio dell'applicazione.
 
 Seguono in ordine:
-- Controller
+- ***Controller***
 
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="350" height="240">
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="350" height="290">
 
 La classe `restController` gestisce le chiamate come mostrato precedentemente.
+
 Per ottenere i risultati descritti sarà opportuno far seguire alla porta localhost:8080 le varie rotte.
+
 Le due richieste GET non richiedo altro se non l'inserimento della rotta, mentre la richiesta POST necessita di specificare, all'interno del body, la data cui si vuole fare riferimento in formato  aaaa-MM-ggT:hh:mm:ssZ con chiave `server_modified` e il nome del file come in Dropbox, con chiave `name`.
 
-- Exception 
+- ***Exception***
+
 <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Exception.jpg" width="400" height="280">
+
 Il seguente package è costituito da due classi: 
-	- `GenericInternalException`;
-	- `GenericExternalException`. 
+- `GenericInternalException`;
+- `GenericExternalException`. 
+
 
 Entrambe le classi estendono la classe Exception e consentono rispettivamente di gestire le eccezioni interne ed esterne, inviando un messaggio di errore pronto a specificare il problema che ha causato l'eccezione.
 
-- Model  
+- ***Model***
+
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Model.jpg" width="700" height="450">
+ 
  Il package model è costituito da quattro classi:
-	 - `Entry`, le informazioni relative alla singola revisione di un file;
-	 - `Revision`, contiene l'informazione *is_deleted* (che ci informa sull'eventuale eliminazione del file), e tutti le entries relativa ad un file;
-	 - `Metadata`, è il singolo metadato con informazioni sul nome, descrizione e tipo di ogni elemento di revision;
-	 - `Stats`, contiene i campi delle statistiche che verranno mostrate con la chiamata POST.
+- `Entry`, contente le informazioni relative alla singola revisione di un file;
+- `Revision`, la quale contiene l'informazione *is_deleted* (che ci informa sull'eventuale eliminazione del file), e tutti le entries relativa ad un file;
+- `Metadata`, è il singolo metadato con informazioni sul nome, descrizione e tipo di ogni elemento di revision;
+- `Stats`, contiene i campi delle statistiche che verranno mostrate con la chiamata POST.
 
-- Services
+
+- ***Services***
+
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Services.jpg" width="400" height="280">
+ 
 Nel package services possiamo individuare le classi:
-	 - `Database`, classe che scarica il json e restituisce un lista di revisioni;
-	- `RevisionService`, interfaccia che definisce le funzioni impiegate all'interno del *restController*;
-	- `RevisionServiceImpl`, implementazione dell'interfaccia *RevisionServooice* nel quale le varie funzioni vengono definite.
+- `Database`, classe che scarica il json e restituisce un lista di revisioni attraverso la rotta */data*;
+- `RevisionService`, interfaccia che definisce le funzioni impiegate all'interno del *restController*;
+- `RevisionServiceImpl`, implementazione dell'interfaccia *RevisionService* nel quale le varie funzioni vengono definite.
 
--  Util
+-  ***Util***
+
 <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Utility.jpg" width="400" height="280">
+
  Il package util contiene:
-	- `MetadataArray`, costituisce l'implementazione di un ArrayList contenente tutti i metadati restituiti con la rotta /metadata;
-	- `RevisionStats`, gestisce la creazione delle statistiche restituiti con la rotta /stats.
+- `MetadataArray`, costituisce l'implementazione di un ArrayList contenente tutti i metadati restituiti tramite la rotta */metadata*;
+- `RevisionStats`, gestisce la creazione delle statistiche restituite tramite la rotta */stats*.
 
 ***Diagramma delle sequenze***
+
 Il seguente diagramma mostra la sequenza di azioni relativa alla ad ogni richiesta che può essere effettuata dall'utente. 
+
 <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="750" height="500">
-- GET /data: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale inizializza un ArrayList di `Revision` con il json scaricato nel `Database`. 
 
-- GET /metadata: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale restituisce in formato json un ArrayList di `Metadata` implementato in `MetadataArr`.
 
-- POST /stats: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale restituisce in formato json un oggetto di tipo `Stats`, il quale viene implementato in `RevisionStats`.
+- *GET /data*: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale inizializza un ArrayList di `Revision` con il json scaricato nel `Database`. 
+
+- *GET /metadata*: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale restituisce in formato json un ArrayList di `Metadata` implementato in `MetadataArr`.
+
+- *POST /stats*: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale restituisce in formato json un oggetto di tipo `Stats`, il quale viene implementato in `RevisionStats`.
 
 
 
