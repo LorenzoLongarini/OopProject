@@ -4,7 +4,7 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 - [Introduzione ](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#introduzione)
 - [Specifiche del progetto](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#specifiche-del-progetto)
 - [Struttura e Funzionamento](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#struttura-e-funzionamento)
--  Software
+-  Softwares
 - Autore
 
 ### Introduzione
@@ -43,26 +43,39 @@ Seguono in ordine:
 
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="400" height="300">
 
-La classe restController gestisce le chiamate come mostrato precedentemente.
+La classe ```restController``` gestisce le chiamate come mostrato precedentemente.
 Per ottenere i risultati descritti sarà opportuno far seguire alla porta localhost:8080 le varie rotte.
 Le due richieste GET non richiedo altro se non l'inserimento della rotta, mentre la richiesta POST necessita di specificare, all'interno del body, la data cui si vuole fare riferimento in formato  aaaa-MM-ggT:hh:mm:ssZ con chiave ```server_modified``` e il nome del file come in Dropbox, con chiave ```name```.
 
 - Exception 
-<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Exception.jpg" width="400" height="300">
-Il seguente package è costituito da due classi: GenericInternalException e GenericExternalException
+<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Exception.jpg" width="400" height="280">
+Il seguente package è costituito da due classi: ```GenericInternalException``` e ```GenericExternalException```. Entambe le classi estendono la classe Exception e consentono rispettivamente di gestire le eccezioni interne ed esterne, inviando un messaggio di errore pronto a specificare il problema che ha causato l'eccezione.
 
 - Model  
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Model.jpg" width="400" height="300">
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Model.jpg" width="700" height="450">
+ Il package model è costituito da quattro classi:
+	 - ```Entry```, le informazioni relative alla singola revisione di un file;
+	 - ```Revision```, contiene l'informazione *is_deleted* (che ci informa sull'eventuale eliminazione del file), e tutti le entries relativa ad un file;
+	 - ```Metadata```, è il singolo metadato con informazioni sul nome, descrizione e tipo di ogni elemento di revision;
+	 - ```Stats```, contiene i campi delle statistiche che verranno mostrate con la chiamata POST.
 
 - Services
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Services.jpg" width="400" height="300">
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Services.jpg" width="400" height="280">
+
+Nel package services possiamo individuare le classi:
+		- Database, classe che scarica il json e restituisce un lista di revisioni;
+		- 
 
 -  Util
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Utility.jpg" width="400" height="300">
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Utility.jpg" width="400" height="280">
 
 Diagramma delle sequenze
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="400" height="300">
 
+
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="750" height="500">
+
+
+### Softwares
 
 ### Autore
 [**Lorenzo Longarini**](https://github.com/LorenzoLongarini)
