@@ -46,7 +46,7 @@ La classe contente il main è situato all'interno di  it.univpm.OopProject ed è
 Seguono in ordine:
 - Controller
 
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="380" height="280">
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="350" height="240">
 
 La classe `restController` gestisce le chiamate come mostrato precedentemente.
 Per ottenere i risultati descritti sarà opportuno far seguire alla porta localhost:8080 le varie rotte.
@@ -54,7 +54,11 @@ Le due richieste GET non richiedo altro se non l'inserimento della rotta, mentre
 
 - Exception 
 <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Exception.jpg" width="400" height="280">
-Il seguente package è costituito da due classi: `GenericInternalException` e `GenericExternalException`. Entambe le classi estendono la classe Exception e consentono rispettivamente di gestire le eccezioni interne ed esterne, inviando un messaggio di errore pronto a specificare il problema che ha causato l'eccezione.
+Il seguente package è costituito da due classi: 
+	- `GenericInternalException`;
+	- `GenericExternalException`. 
+
+Entrambe le classi estendono la classe Exception e consentono rispettivamente di gestire le eccezioni interne ed esterne, inviando un messaggio di errore pronto a specificare il problema che ha causato l'eccezione.
 
 - Model  
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Model.jpg" width="700" height="450">
@@ -68,19 +72,24 @@ Il seguente package è costituito da due classi: `GenericInternalException` e `G
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Services.jpg" width="400" height="280">
 Nel package services possiamo individuare le classi:
 	 - `Database`, classe che scarica il json e restituisce un lista di revisioni;
-	- `RevisionService`
-	- `RevisionServiceImpl`
+	- `RevisionService`, interfaccia che definisce le funzioni impiegate all'interno del *restController*;
+	- `RevisionServiceImpl`, implementazione dell'interfaccia *RevisionServooice* nel quale le varie funzioni vengono definite.
 
 -  Util
 <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Utility.jpg" width="400" height="280">
  Il package util contiene:
-	- `MetadataArray`
-	- `RevisionStats`
+	- `MetadataArray`, costituisce l'implementazione di un ArrayList contenente tutti i metadati restituiti con la rotta /metadata;
+	- `RevisionStats`, gestisce la creazione delle statistiche restituiti con la rotta /stats.
 
-Diagramma delle sequenze
+***Diagramma delle sequenze***
+Il seguente diagramma mostra la sequenza di azioni relativa alla ad ogni richiesta che può essere effettuata dall'utente. 
+<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="750" height="500">
+- GET /data: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale inizializza un ArrayList di `Revision` con il json scaricato nel `Database`. 
 
+- GET /metadata: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale restituisce in formato json un ArrayList di `Metadata` implementato in `MetadataArr`.
 
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="750" height="500">
+- POST /stats: il `restController` effettua una chiamata a `RevisionServiceImpl`, il quale restituisce in formato json un oggetto di tipo `Stats`, il quale viene implementato in `RevisionStats`.
+
 
 
 [<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="50" height="50">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
