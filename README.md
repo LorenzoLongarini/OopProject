@@ -4,7 +4,7 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 - [Introduzione ](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#introduzione)
 - [Specifiche del progetto](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#specifiche-del-progetto)
 - [Struttura e Funzionamento](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#struttura-e-funzionamento)
--  [Softwares](https://github.com/LorenzoLongarini/OopProject#softwares)
+- [Softwares](https://github.com/LorenzoLongarini/OopProject#softwares)
 - [Autore](https://github.com/LorenzoLongarini/OopProject#autore)
 
 ### Introduzione
@@ -58,7 +58,7 @@ La classe `restController` gestisce le chiamate come mostrato precedentemente.
 
 Per ottenere i risultati descritti sarà opportuno far seguire alla porta localhost:8080 le varie rotte.
 
-Le due richieste GET non richiedo altro se non l'inserimento della rotta, mentre la richiesta POST necessita di specificare, all'interno del body, la data cui si vuole fare riferimento in formato  aaaa-MM-ggT:hh:mm:ssZ con chiave `server_modified` e il nome del file come in Dropbox, con chiave `name`.
+Le due richieste GET non richiedono altro se non l'inserimento della rotta, mentre la richiesta POST necessita di specificare, all'interno del body, la data cui si vuole fare riferimento in formato  aaaa-MM-ggT:hh:mm:ssZ con chiave `server_modified` e il nome del file come in Dropbox, con chiave `name`.
 
 - ***Exception***
 
@@ -76,7 +76,7 @@ Entrambe le classi estendono la classe Exception e consentono rispettivamente di
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Model.jpg" width="700" height="450">
  
  Il package model è costituito da quattro classi:
-- `Entry`, contente le informazioni relative alla singola revisione di un file;
+- `Entry`, contenente le informazioni relative alla singola revisione di un file;
 - `Revision`, la quale contiene l'informazione *is_deleted* (che ci informa sull'eventuale eliminazione del file), e tutti le entries relativa ad un file;
 - `Metadata`, è il singolo metadato con informazioni sul nome, descrizione e tipo di ogni elemento di revision;
 - `Stats`, contiene i campi delle statistiche che verranno mostrate con la chiamata POST.
@@ -101,7 +101,7 @@ Nel package services possiamo individuare le classi:
 
 ***Diagramma delle sequenze***
 
-Il seguente diagramma mostra la sequenza di azioni relativa alla ad ogni richiesta che può essere effettuata dall'utente. 
+Il seguente diagramma mostra la sequenza di azioni relativa ad ogni richiesta che può essere effettuata dall'utente. 
 
 <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="750" height="500">
 
