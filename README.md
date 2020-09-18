@@ -13,7 +13,7 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 - #### Perchè Spring Boot?
 ```Spring Boot è una soluzione "convention over configuration" per il framework Spring di Java, che è stato rilasciato nel 2012 e riduce la complessità di configurazione di nuovi progetti Spring. A questo scopo, Spring Boot definisce una configurazione di base che include le linee guida per l'uso del framework e tutte le librerie di terze parti rilevanti, rendendo quindi l'avvio di nuovi progetti il più semplice possibile.```
 
-[![Image][1]](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/User.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
 
 ### Specifiche del progetto: 
 
@@ -83,6 +83,3 @@ Diagramma delle sequenze
 [**Lorenzo Longarini**](https://github.com/LorenzoLongarini)
 
 
-[1]:https://www.google.com/search?q=casetta+icona&sxsrf=ALeKk02MFrthJx4YGdqhkksItfESb18aAQ:1600436150241&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjay-Gh6fLrAhVMDOwKHSddB28Q_AUoAXoECAwQAw&biw=1536&bih=754#imgrc=8oplI140cmy68M
-
- 
