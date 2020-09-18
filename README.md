@@ -31,7 +31,8 @@ Avviata l'applicazione come Spring Boot Application, il Web Service sarà in asc
 Per una più semplice visualizzazione dei dati che verranno restituiti si consiglia l'utilizzo di Postman (un'applicazione del browser Google Chrome che consente di costruire, testare e documentare API).
 
 Le possibilità dell'utente sono mostrate nel seguente diagramma dei casi d'uso: 
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/User.jpg" width="400" height="256">
+
+<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/User.jpg" width="400" height="256">
 
 TIPO RICHIESTA | ROTTA | FUNZIONE |
 -|-|-|
@@ -44,7 +45,7 @@ POST | /stats | Restituisce statistiche relative a numerosità e tempi medi  del
 Il programma è strutturato in cinque package come segue :
 
 
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Packages.jpg" width="400" height="256">
+<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Packages.jpg" width="400" height="256">
  
 La classe contente il main è situato all'interno di  it.univpm.OopProject ed è la classe che consente l'avvio dell'applicazione.
 
