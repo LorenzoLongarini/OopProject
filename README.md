@@ -13,12 +13,15 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 - #### Perchè Spring Boot?
 ```Spring Boot è una soluzione "convention over configuration" per il framework Spring di Java, che è stato rilasciato nel 2012 e riduce la complessità di configurazione di nuovi progetti Spring. A questo scopo, Spring Boot definisce una configurazione di base che include le linee guida per l'uso del framework e tutte le librerie di terze parti rilevanti, rendendo quindi l'avvio di nuovi progetti il più semplice possibile.```
 
-[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/User.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
 
 ### Specifiche del progetto: 
 
 - ```A partire dai file presenti in una cartella Dropbox si analizzino le revisioni dei singoli file effettuando statistiche su numerosità  e tempi medi.```
 - ```Statistiche sulle revisioni per singolo file con numero di revisioni giornaliere e settimanali e tempo medio tra le revisioni.```
+
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+
 
 ### Struttura e Funzionamento
 Per il corretto funzionamento è opportuno scaricare la seguente [*repository*]-- (https://github.com/LorenzoLongarini/OopProject.git) così da poter visionare meglio il progetto.
@@ -77,9 +80,17 @@ Diagramma delle sequenze
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="750" height="500">
 
 
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+
+
 ### Softwares
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+
 
 ### Autore
 [**Lorenzo Longarini**](https://github.com/LorenzoLongarini)
+
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+
 
 
