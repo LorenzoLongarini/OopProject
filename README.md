@@ -13,18 +13,18 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 - #### Perchè Spring Boot?
 ```Spring Boot è una soluzione "convention over configuration" per il framework Spring di Java, che è stato rilasciato nel 2012 e riduce la complessità di configurazione di nuovi progetti Spring. A questo scopo, Spring Boot definisce una configurazione di base che include le linee guida per l'uso del framework e tutte le librerie di terze parti rilevanti, rendendo quindi l'avvio di nuovi progetti il più semplice possibile.```
 
-[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="50" height="50">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
 
 ### Specifiche del progetto: 
 
 - ```A partire dai file presenti in una cartella Dropbox si analizzino le revisioni dei singoli file effettuando statistiche su numerosità  e tempi medi.```
 - ```Statistiche sulle revisioni per singolo file con numero di revisioni giornaliere e settimanali e tempo medio tra le revisioni.```
 
-[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="50" height="50">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
 
 
 ### Struttura e Funzionamento
-Per il corretto funzionamento è opportuno scaricare la seguente [*repository*]-- (https://github.com/LorenzoLongarini/OopProject.git) così da poter visionare meglio il progetto.
+Per il corretto funzionamento, effettuare il download oppure clonare il progetto in un opportuno ide (quale Eclipse) così da poter avviare il web Service.
 Avviata l'applicazione come Spring Boot Application, il Web Service sarà in ascolto alla porta [http://localhost:8080](http://localhost:8080/). Per una più semplice visualizzazione dei dati che verranno restituiti si consiglia l'utilizzo di Postman (un'applicazione del browser Google Chrome che consente di costruire, testare e documentare API).
 Le possibilità dell'utente sono mostrate nel seguente diagramma dei casi d'uso: 
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/User.jpg" width="400" height="256">
@@ -48,31 +48,34 @@ Seguono in ordine:
 
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="380" height="280">
 
-La classe ```restController``` gestisce le chiamate come mostrato precedentemente.
+La classe `restController` gestisce le chiamate come mostrato precedentemente.
 Per ottenere i risultati descritti sarà opportuno far seguire alla porta localhost:8080 le varie rotte.
-Le due richieste GET non richiedo altro se non l'inserimento della rotta, mentre la richiesta POST necessita di specificare, all'interno del body, la data cui si vuole fare riferimento in formato  aaaa-MM-ggT:hh:mm:ssZ con chiave ```server_modified``` e il nome del file come in Dropbox, con chiave ```name```.
+Le due richieste GET non richiedo altro se non l'inserimento della rotta, mentre la richiesta POST necessita di specificare, all'interno del body, la data cui si vuole fare riferimento in formato  aaaa-MM-ggT:hh:mm:ssZ con chiave `server_modified` e il nome del file come in Dropbox, con chiave `name`.
 
 - Exception 
 <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Exception.jpg" width="400" height="280">
-Il seguente package è costituito da due classi: ```GenericInternalException``` e ```GenericExternalException```. Entambe le classi estendono la classe Exception e consentono rispettivamente di gestire le eccezioni interne ed esterne, inviando un messaggio di errore pronto a specificare il problema che ha causato l'eccezione.
+Il seguente package è costituito da due classi: `GenericInternalException` e `GenericExternalException`. Entambe le classi estendono la classe Exception e consentono rispettivamente di gestire le eccezioni interne ed esterne, inviando un messaggio di errore pronto a specificare il problema che ha causato l'eccezione.
 
 - Model  
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Model.jpg" width="700" height="450">
  Il package model è costituito da quattro classi:
-	 - ```Entry```, le informazioni relative alla singola revisione di un file;
-	 - ```Revision```, contiene l'informazione *is_deleted* (che ci informa sull'eventuale eliminazione del file), e tutti le entries relativa ad un file;
-	 - ```Metadata```, è il singolo metadato con informazioni sul nome, descrizione e tipo di ogni elemento di revision;
-	 - ```Stats```, contiene i campi delle statistiche che verranno mostrate con la chiamata POST.
+	 - `Entry`, le informazioni relative alla singola revisione di un file;
+	 - `Revision`, contiene l'informazione *is_deleted* (che ci informa sull'eventuale eliminazione del file), e tutti le entries relativa ad un file;
+	 - `Metadata`, è il singolo metadato con informazioni sul nome, descrizione e tipo di ogni elemento di revision;
+	 - `Stats`, contiene i campi delle statistiche che verranno mostrate con la chiamata POST.
 
 - Services
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Services.jpg" width="400" height="280">
-
 Nel package services possiamo individuare le classi:
-		- Database, classe che scarica il json e restituisce un lista di revisioni;
-		- 
+	 - `Database`, classe che scarica il json e restituisce un lista di revisioni;
+	- `RevisionService`
+	- `RevisionServiceImpl`
 
 -  Util
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Utility.jpg" width="400" height="280">
+<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Utility.jpg" width="400" height="280">
+ Il package util contiene:
+	- `MetadataArray`
+	- `RevisionStats`
 
 Diagramma delle sequenze
 
@@ -80,17 +83,24 @@ Diagramma delle sequenze
  <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="750" height="500">
 
 
-[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="50" height="50">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
 
 
 ### Softwares
-[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+-   [Eclipse](https://www.eclipse.org/downloads/)  - ambiente di sviluppo integrato multi-linguaggio e multipiattaforma.
+-   [Spring Boot](https://start.spring.io/)  - framework per lo sviluppo di applicazioni Java.
+-   [Maven](https://maven.apache.org/)  - strumento di gestione di progetti software basati su Java e build automation.
+-   [UML Designer](http://www.umldesigner.org/download/)  - strumento UML open source basato su Sirius ed Eclipse, utile alla realizzazione dei diagrammi presenti nella documentazione.
+
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="50" height="50">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+
 
 
 ### Autore
 [**Lorenzo Longarini**](https://github.com/LorenzoLongarini)
 
-[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="30" height="30">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+[<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/icona-della-casetta-piccola-casa-vettore-dell-simbolo-piano-semplice-pittogramma-illustrazione-139757972.jpg" width="50" height="50">](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
+
 
 
 
