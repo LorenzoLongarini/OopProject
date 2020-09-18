@@ -3,8 +3,8 @@
 La seguente documentazione è relativa al progetto di programmazione ad oggetti in data 18/09/2020.
 - [Introduzione ](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#introduzione)
 - [Specifiche del progetto](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#specifiche-del-progetto)
-- Struttura e Funzionamento
--  Sitografia e Software
+- [Struttura e Funzionamento](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#struttura-e-funzionamento)
+-  Software
 - Autore
 
 ### Introduzione
@@ -19,7 +19,18 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 - ```Statistiche sulle revisioni per singolo file con numero di revisioni giornaliere e settimanali e tempo medio tra le revisioni.```
 
 ### Struttura e Funzionamento
-Per il corretto funzionamento è opportuno scaricare la seguente repository così da poter visionare meglio il progetto.
+Per il corretto funzionamento è opportuno scaricare la seguente [*repository*]-- (https://github.com/LorenzoLongarini/OopProject.git) così da poter visionare meglio il progetto.
+Avviata l'applicazione come Spring Boot Application, il Web Service sarà in ascolto alla porta [http://localhost:8080](http://localhost:8080/). Per una più semplice visualizzazione dei dati che verranno restituiti si consiglia l'utilizzo di Postman (un'applicazione del browser Google Chrome che consente di costruire, testare e documentare API).
+Le possibilità dell'utente sono mostrate nel seguente diagramma dei casi d'uso: 
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/User.jpg" width="400" height="256">
+
+TIPO RICHIESTA | ROTTA | FUNZIONE |
+-|-|-|
+GET | /data | Restituisce tutte le revisioni sui file presenti nel Dropbox con path TxtDoc in formato json. |
+GET | /metadata | Restituisce tutte le informazioni utili (formato json) alla comprensione del json delle revisioni.
+POST | /stats | Restituisce statistiche relative a numerosità e tempi medi  delle revisioni relative ad una data specificata dall'utente all'interno del body della richiesta.
+
+
 
 Il programma è strutturato in cinque package come segue :
 
@@ -30,10 +41,31 @@ La classe contente il main è situato all'interno di  it.univpm.OopProject ed è
 Seguono in ordine:
 - Controller
 
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="400" height="256">
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="400" height="300">
+
+La classe restController gestisce le chiamate come mostrato precedentemente.
+Per ottenere i risultati descritti sarà opportuno far seguire alla porta localhost:8080 le varie rotte.
+Le due richieste GET non richiedo altro se non l'inserimento della rotta, mentre la richiesta POST necessita di specificare, all'interno del body, la data cui si vuole fare riferimento in formato  aaaa-MM-ggT:hh:mm:ssZ con chiave ```server_modified``` e il nome del file come in Dropbox, con chiave ```name```.
+
+- Exception 
+<img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Exception.jpg" width="400" height="300">
+Il seguente package è costituito da due classi: GenericInternalException e GenericExternalException
+
+- Model  
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Model.jpg" width="400" height="300">
+
+- Services
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Services.jpg" width="400" height="300">
+
+-  Util
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Utility.jpg" width="400" height="300">
+
+Diagramma delle sequenze
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/SequenceDiagram.jpg" width="400" height="300">
 
 
- 
- La classe che gestisce le chiamate. Dispone di tre tipologie di chiamata come in tabella:
-|
+### Autore
+[**Lorenzo Longarini**](https://github.com/LorenzoLongarini)
+
+
  
