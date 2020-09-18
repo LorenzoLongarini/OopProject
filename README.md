@@ -4,14 +4,16 @@ La seguente documentazione è relativa al progetto di programmazione ad oggetti 
 - [Introduzione ](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#introduzione)
 - [Specifiche del progetto](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#specifiche-del-progetto)
 - [Struttura e Funzionamento](https://github.com/LorenzoLongarini/OopProject/blob/master/README.md#struttura-e-funzionamento)
--  Softwares
-- Autore
+-  [Softwares](https://github.com/LorenzoLongarini/OopProject#softwares)
+- [Autore](https://github.com/LorenzoLongarini/OopProject#autore)
 
 ### Introduzione
 - #### Cos'è un Web Service?
 ```Un Web Service è un sistema software in grado di mettersi al servizio di un applicazione comunicando su di una medesima rete tramite il protocollo HTTP: esso consente quindi alle applicazioni che vi si collegano di usufruire delle funzioni che mette a disposizione.```
 - #### Perchè Spring Boot?
 ```Spring Boot è una soluzione "convention over configuration" per il framework Spring di Java, che è stato rilasciato nel 2012 e riduce la complessità di configurazione di nuovi progetti Spring. A questo scopo, Spring Boot definisce una configurazione di base che include le linee guida per l'uso del framework e tutte le librerie di terze parti rilevanti, rendendo quindi l'avvio di nuovi progetti il più semplice possibile.```
+
+[![Image][1]](https://github.com/LorenzoLongarini/OopProject#dropbox---list-revisions)
 
 ### Specifiche del progetto: 
 
@@ -41,7 +43,7 @@ La classe contente il main è situato all'interno di  it.univpm.OopProject ed è
 Seguono in ordine:
 - Controller
 
- <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="400" height="300">
+ <img src="https://github.com/LorenzoLongarini/OopProject/blob/master/UML/Controller.jpg" width="380" height="280">
 
 La classe ```restController``` gestisce le chiamate come mostrato precedentemente.
 Per ottenere i risultati descritti sarà opportuno far seguire alla porta localhost:8080 le varie rotte.
@@ -80,5 +82,7 @@ Diagramma delle sequenze
 ### Autore
 [**Lorenzo Longarini**](https://github.com/LorenzoLongarini)
 
+
+[1]:https://www.google.com/search?q=casetta+icona&sxsrf=ALeKk02MFrthJx4YGdqhkksItfESb18aAQ:1600436150241&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjay-Gh6fLrAhVMDOwKHSddB28Q_AUoAXoECAwQAw&biw=1536&bih=754#imgrc=8oplI140cmy68M
 
  
